@@ -24,8 +24,8 @@ export const pixel = Pixelify_Sans({
   variable: "--font-pixel",
 });
 
-// export const avant = localFont({
-//   src: "../public/fonts/AVGARDD_2.woff",
-//   weight: "400",
-//   variable: "--font-avant",
-// });
+export const avant = localFont({
+  src: "../public/fonts/AVGARDD_2.woff",
+  weight: "400",
+  variable: "--font-avant",
+});

@@ -14,7 +14,8 @@ const config = {
       roboto: ["var(--font-roboto)"],
       montserrat: ["var(--font-montserrat)"],
       inter: ["var(--font-inter)"],
-      pixelx: ["var(--font-pixelx)"],
+      pixel: ["var(--font-pixel)"],
+      avant: ["var(--font-avant)"],
     },
     container: {
       center: true,
