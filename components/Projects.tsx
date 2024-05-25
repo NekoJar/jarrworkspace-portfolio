@@ -9,7 +9,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <div className="bg-neutral-200 p-4 h-screen pt-14">
+    <div className="bg-neutral-200 p-12 h-screen " id="projects">
       <p className="text-5xl font-extrabold uppercase border-b border-black pb-4">
         Projects
       </p>
