@@ -1,9 +1,10 @@
+import Lenis from "lenis";
 import Link from "next/link";
 import React from "react";
 
 export const Navbar = () => {
   return (
-    <div className="h-full">
+    <div className="h-full fixed z-50 mix-blend-exclusion">
       <div className="uppercase text-white text-[0.65rem] p-6 mt-2 fixed w-full mix-blend-exclusion top-0 flex justify-center items-center">
         <fieldset className="border-t border-b border-r border-l border-white mix-blend-exclusion w-screen h-[90.92vh] ">
           <legend className="px-8 ">Zharfan Hakim</legend>

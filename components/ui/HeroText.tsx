@@ -3,7 +3,7 @@ import React from "react";
 export const HeroText = () => {
   return (
     <>
-      <div className="flex items-center text-3xl justify-center w-max gap-4 text-neutral-300 font-pixel ">
+      <div className="flex items-center text-3xl justify-center w-max gap-4 text-neutral-300 font-pixel">
         <p className="first-letter:italic first-letter:font-extrabold">
           Zharfan
         </p>
