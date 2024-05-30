@@ -33,7 +33,7 @@ export default function Home() {
     <main>
       <Hero />
       <Projects />
-      <Contact />
+      {/* <Contact />    */}
     </main>
   );
 }
