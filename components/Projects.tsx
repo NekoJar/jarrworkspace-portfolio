@@ -34,7 +34,7 @@ export const Projects = () => {
       style={{ opacity }}
     >
       <motion.div style={{ height }} className="text-neutral-800">
-        <div className="flex flex-col md:flex-row text-5xl sm:text-9xl lg:text-[16rem]  font-extrabold justify-between tracking-tighter uppercase border-b border-neutral-700 pb-4">
+        <div className="flex text-5xl sm:text-9xl xl:text-[16rem]  font-extrabold justify-between tracking-tighter uppercase border-b border-neutral-700 pb-4">
           <p>Projects</p>
           <div className="flex">
             <span>
@@ -45,14 +45,21 @@ export const Projects = () => {
                 stroke="pink"
                 className="hidden sm:block animate-pulse duration-1000 rotate-180"
               />
+              <EyeIcon
+                width={30}
+                height={30}
+                strokeWidth={0.3}
+                stroke="pink"
+                className="sm:hidden block animate-pulse duration-1000 rotate-180"
+              />
             </span>
           </div>
         </div>
         <ul className="uppercase pt-4 text-neutral-700">
           {projects.map((project) => (
             <li className="border-b border-neutral-700 p-4" key={project.title}>
-              <div className="flex justify-between items-center ">
-                <p className="">{project.title}</p>
+              <div className="flex justify-between items-center">
+                <p>{project.title}</p>
                 <p className="italic text-xs">{project.year}</p>
               </div>
             </li>
