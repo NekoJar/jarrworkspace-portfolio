@@ -13,7 +13,6 @@ export default function Home() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       gestureOrientation: "vertical",
-      syncTouch: true,
     });
 
     lenis.on("scroll", (e: ReactEventHandler) => {

@@ -42,7 +42,7 @@ export const Projects = () => {
                 width={100}
                 height={100}
                 strokeWidth={0.3}
-                stroke="pink"
+                stroke="red"
                 className="hidden sm:block animate-pulse duration-1000 rotate-180"
               />
               <EyeIcon
