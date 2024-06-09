@@ -66,6 +66,23 @@
   }
 }
 
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  padding: 5px;
+  background: lightgray;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+
+  -webkit-border-radius: 1ex;
+}
+
+/* ::-webkit-scrollbar-corner {
+  background: black;
+} */
+
 html.lenis,
 html.lenis body {
   height: auto;

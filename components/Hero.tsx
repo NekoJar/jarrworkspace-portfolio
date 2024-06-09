@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { HeroText } from "./ui/HeroText";
 import { motion, useScroll, useTransform } from "framer-motion";
+import FuzzyOverlay from "./ui/FuzzyOverlay";
 
 export const Hero = () => {
   const container = useRef(null);
@@ -15,10 +16,10 @@ export const Hero = () => {
   return (
     <div
       ref={container}
-      className="p-20 py-64 w-[100%]  h-[100vh] flex flex-col justify-center items-center uppercase"
+      className="p-20 py-64 w-[100%]  h-[100vh] flex flex-col justify-center items-center uppercase relative z-10"
       id="home"
     >
-      <motion.div style={{ opacity }} className="fixed pl-10 sm:pl-0">
+      <motion.div style={{ opacity }} className="fixed pl-10 xl:pl-96">
         <HeroText />
       </motion.div>
     </div>

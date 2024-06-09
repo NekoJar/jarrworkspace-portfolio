@@ -4,7 +4,7 @@ import { Asterisk, EyeIcon, GlobeIcon, Triangle } from "lucide-react";
 import React, { useRef } from "react";
 
 const projects = [
-  { title: "Project 1", year: "(2024)" },
+  { title: "Esemka", year: "(2024)" },
   { title: "Project 2", year: "(2024)" },
   { title: "Project 3", year: "(2024)" },
   { title: "Project 4", year: "(2024)" },
@@ -20,7 +20,7 @@ export const Projects = () => {
 
   const { scrollYProgress: scrollYProgressOpacity } = useScroll({
     target: container,
-    offset: ["start end", "end end"],
+    offset: ["start end", "start start"],
   });
 
   const height = useTransform(scrollYProgress, [0, 1], [0, -2000]);
@@ -28,12 +28,15 @@ export const Projects = () => {
 
   return (
     <motion.div
-      className="bg-transparent p-12 h-screen relative z-[1]"
+      className="bg-transparent p-12 h-screen relative z-10"
       id="projects"
       ref={container}
       style={{ opacity }}
     >
-      <motion.div style={{ height }} className="text-neutral-800">
+      <motion.div
+        style={{ height }}
+        className="text-neutral-800 sticky top-4 pt-8"
+      >
         <div className="flex text-5xl sm:text-9xl xl:text-[16rem]  font-extrabold justify-between tracking-tighter uppercase border-b border-neutral-700 pb-4">
           <p>Projects</p>
           <div className="flex">
@@ -55,16 +58,21 @@ export const Projects = () => {
             </span>
           </div>
         </div>
-        <ul className="uppercase pt-4 text-neutral-700">
+        <ul className="uppercase text-neutral-700">
           {projects.map((project) => (
-            <li className="border-b border-neutral-700 p-4" key={project.title}>
+            <li
+              className="border-b border-neutral-700 p-4 overflow-hidden h-11 "
+              key={project.title}
+            >
               <div className="flex justify-between items-center">
                 <p>{project.title}</p>
                 <p className="italic text-xs">{project.year}</p>
               </div>
+              <div className="mt-2">asok</div>
             </li>
           ))}
         </ul>
+        {/* <ProjectList /> */}
       </motion.div>
     </motion.div>
   );

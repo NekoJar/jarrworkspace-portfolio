@@ -12,8 +12,14 @@ export const Contact = () => {
   const height = useTransform(scrollYProgress, [0, 1], [0, -1000]);
 
   return (
-    <div className="p-12 h-screen relative z-[2]" id="contact" ref={container}>
-      <motion.div style={{ height }}>
+    <div className="p-12 h-screen mt-[100vh]" id="contact" ref={container}>
+      <motion.div
+        style={{ height }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ amount: "all" }}
+        transition={{ duration: 1 }}
+      >
         <p className="text-5xl font-extrabold uppercase border-b border-neutral-700 text-neutral-800 pb-4">
           Connect
         </p>

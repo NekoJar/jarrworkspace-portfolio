@@ -1,0 +1,52 @@
+"use client";
+import { stagger, useAnimate } from "framer-motion";
+import Link from "next/link";
+import React, { useState } from "react";
+
+interface NavLinksProps {
+  href: string;
+  label: string;
+}
+
+export const NavLink = ({ href, label }: NavLinksProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [scope, animate] = useAnimate();
+  const characters = label.split("");
+
+  const onMouseEnter = () => {
+    animate([[".letter", { y: -16 }, { duration: 0.5, delay: stagger(0.05) }]]);
+    setIsHovered(true);
+  };
+  const onMouseLeave = () => {
+    animate([[".letter", { y: 0 }, { duration: 0.5, delay: stagger(0.05) }]]);
+    setIsHovered(false);
+  };
+
+  return (
+    <Link
+      ref={scope}
+      href={href}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      className="overflow-hidden relative z-50"
+    >
+      {characters.map((letter, index) => (
+        <>
+          <span
+            data-letter={letter}
+            className="letter relative inline-block h-4 leading-4 after:absolute after:left-0 after:top-full after:h-8 after:content-[attr(data-letter)]"
+            key={`${letter}-${index}`}
+          >
+            {letter}
+          </span>
+          <span
+            style={{
+              transform: isHovered ? "scaleX(1)" : "scaleX(0)",
+            }}
+            className="absolute bottom-0 -left-2 -right-2 h-0.5 origin-left scale-x-0 bg-neutral-300 transition-transform duration-1000 ease-out"
+          />
+        </>
+      ))}
+    </Link>
+  );
+};
