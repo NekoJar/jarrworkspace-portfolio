@@ -2,6 +2,7 @@
 import { Contact } from "@/components/Contact";
 import { Hero } from "@/components/Hero";
 import { Projects } from "@/components/Projects";
+import FuzzyOverlay from "@/components/ui/FuzzyOverlay";
 
 import Lenis from "lenis";
 import { ReactEventHandler, useEffect } from "react";

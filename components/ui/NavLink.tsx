@@ -14,7 +14,7 @@ export const NavLink = ({ href, label }: NavLinksProps) => {
   const characters = label.split("");
 
   const onMouseEnter = () => {
-    animate([[".letter", { y: -16 }, { duration: 0.5, delay: stagger(0.05) }]]);
+    animate([[".letter", { y: -24 }, { duration: 0.5, delay: stagger(0.05) }]]);
     setIsHovered(true);
   };
   const onMouseLeave = () => {
@@ -34,7 +34,7 @@ export const NavLink = ({ href, label }: NavLinksProps) => {
         <>
           <span
             data-letter={letter}
-            className="letter relative inline-block h-4 leading-4 after:absolute after:left-0 after:top-full after:h-8 after:content-[attr(data-letter)]"
+            className="letter relative inline-block h-4 leading-4 sm:h-6 after:absolute after:left-0 after:top-full after:h-8 after:content-[attr(data-letter)]"
             key={`${letter}-${index}`}
           >
             {letter}

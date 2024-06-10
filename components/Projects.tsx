@@ -14,7 +14,7 @@ export const Projects = () => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start start", "end start"],
+    offset: ["end end", "end start"],
     smooth: 1,
   });
 
@@ -23,21 +23,18 @@ export const Projects = () => {
     offset: ["start end", "start start"],
   });
 
-  const height = useTransform(scrollYProgress, [0, 1], [0, -2000]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.85]);
   const opacity = useTransform(scrollYProgressOpacity, [0, 1], [0, 1]);
 
   return (
     <motion.div
-      className="bg-transparent p-12 h-screen relative z-10"
+      className="p-4 h-screen relative z-10 "
       id="projects"
       ref={container}
       style={{ opacity }}
     >
-      <motion.div
-        style={{ height }}
-        className="text-neutral-800 sticky top-4 pt-8"
-      >
-        <div className="flex text-5xl sm:text-9xl xl:text-[16rem]  font-extrabold justify-between tracking-tighter uppercase border-b border-neutral-700 pb-4">
+      <motion.div className="text-neutral-800 sticky top-4 pt-8 overflow-hidden">
+        <div className="flex text-5xl sm:text-9xl xl:text-[16rem]  font-extrabold justify-between tracking-tighter uppercase border-b border-neutral-700 pb-4 bottom-0">
           <p>Projects</p>
           <div className="flex">
             <span>
@@ -72,7 +69,6 @@ export const Projects = () => {
             </li>
           ))}
         </ul>
-        {/* <ProjectList /> */}
       </motion.div>
     </motion.div>
   );
