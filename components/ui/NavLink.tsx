@@ -34,7 +34,7 @@ export const NavLink = ({ href, label }: NavLinksProps) => {
         <>
           <span
             data-letter={letter}
-            className="letter relative inline-block h-4 leading-4 sm:h-6 after:absolute after:left-0 after:top-full after:h-8 after:content-[attr(data-letter)]"
+            className="letter relative inline-block h-6 leading-5 sm:h-6 after:absolute after:left-0 after:top-full after:h-8 after:content-[attr(data-letter)]"
             key={`${letter}-${index}`}
           >
             {letter}
