@@ -18,8 +18,7 @@ export const HeroText = ({
         style={{ opacity, scale: scaleContent }}
         className="flex flex-col uppercase font-extrabold text-4xl md:text-7xl xl:text-9xl justify-center items-center w-[75vw]"
       >
-        <p>Front End Developer</p>
-        <p>UI/UX Designer</p>
+        <p>Full stack developer</p>
       </motion.div>
 
       <motion.div

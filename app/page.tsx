@@ -1,7 +1,9 @@
 "use client";
-import { About } from "@/components/About";
-import { Contact } from "@/components/Contact";
-import { Hero } from "@/components/Hero";
+import { Contact } from "@/components/sections/Contact";
+import { Hero } from "@/components/sections/Hero";
+import { Project } from "@/components/sections/Project";
+import { About } from "@/components/ui/About";
+import { Quote } from "@/components/ui/Quote";
 
 import Lenis from "lenis";
 import { ReactEventHandler, useEffect } from "react";
@@ -31,11 +33,8 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <About />
-      {/* <Desc /> */}
+      <Project />
       <Contact />
-
-      {/* <FuzzyOverlay /> */}
     </main>
   );
 }

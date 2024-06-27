@@ -31,24 +31,13 @@ export const About = () => {
 
   return (
     <motion.div
-      className="p-4 h-[160vh] relative z-10 text-neutral-100 mix-blend-exclusion "
+      className="flex justify-center p-4 h-[100vh] relative z-10 text-neutral-100 mix-blend-exclusion"
       id="projects"
       ref={container}
       style={{ opacity }}
     >
-      <motion.div className=" overflow-hidden bg-gradient-to-b from-transparent via-10% via-black/75 to-20% to-black">
-        <motion.div
-          ref={desc}
-          className="flex justify-end text-right pl-[50vw] text-xs sm:text-lg pr-0 sm:pr-[10vw] font-montserrat italic"
-        >
-          &quot;I&apos;m not a Pro, but I&apos;d love to learn.&quot;
-        </motion.div>
-        <div className="flex justify-start text-left pr-[50vw] text-xs sm:text-lg pt-[20vh] pl-0 sm:pl-[5vw] font-montserrat">
-          Passionate on building modern, user-friendly web applications. I love
-          to work in TypeScript, Next.js, and Tailwind CSS, but I&apos;m happy
-          seeking the right tools for the job.
-        </div>
-        <div className="flex text-5xl sm:text-9xl xl:text-[16rem] font-extrabold justify-center tracking-tighter uppercase pt-[30vw]">
+      <motion.div className="overflow-hidden">
+        <div className="flex text-5xl sm:text-9xl xl:text-[16rem] font-extrabold tracking-tighter uppercase pt-[30vw]">
           <p className="flex gap-6">
             About me
             <span>

@@ -68,20 +68,17 @@
 
 ::-webkit-scrollbar {
   height: 8px;
-  width: 8px;
-  padding: 5px;
-  background: lightgray;
+  width: 6px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background: gray;
-
-  -webkit-border-radius: 1ex;
+  -webkit-border-radius: 0.5ex;
 }
-
-/* ::-webkit-scrollbar-corner {
-  background: black;
-} */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 
 html.lenis,
 html.lenis body {

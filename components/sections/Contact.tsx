@@ -12,11 +12,7 @@ export const Contact = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
 
   return (
-    <motion.div
-      className="bg-black p-4 h-screen mb-12"
-      id="contact"
-      ref={container}
-    >
+    <motion.div className="bg-black p-4 h-screen" id="contact" ref={container}>
       <motion.div>
         <p className="text-5xl font-extrabold uppercase border-b border-white text-white pb-4">
           Connect
