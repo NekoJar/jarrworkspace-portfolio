@@ -1,8 +1,8 @@
 "use client";
+import About from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 import { Hero } from "@/components/sections/Hero";
-import { Project } from "@/components/sections/Project";
-import { About } from "@/components/ui/About";
+import { Projects } from "@/components/sections/Projects";
 import { Quote } from "@/components/ui/Quote";
 
 import Lenis from "lenis";
@@ -33,7 +33,10 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Project />
+      <div className="bg-white h-[400vh] relative z-30">
+        <About />
+        <Projects />
+      </div>
       <Contact />
     </main>
   );
