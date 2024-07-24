@@ -12,12 +12,9 @@ export const Contact = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
 
   return (
-    <div
-      className="relative h-[800px] bg-neutral-100"
-      style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-    >
-      <div className="relative h-[calc(100vh+800px)] -top-[100vh]">
-        <div className=" sticky top-0 p-4">
+    <div className="relative h-screen bg-neutral-100 sm:mt-[100vh]">
+      <div className="relative">
+        <div className="">
           <p className="text-5xl font-extrabold uppercase border-b pb-4">
             Connect
           </p>

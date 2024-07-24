@@ -1,12 +1,12 @@
 "use client";
 import About from "@/components/sections/About";
-import { Contact } from "@/components/sections/Contact";
+import { ProjectList } from "@/components/sections/ProjectList";
 import { Hero } from "@/components/sections/Hero";
-import { Projects } from "@/components/sections/Projects";
-import { Quote } from "@/components/ui/Quote";
+import { ProjectTitle } from "@/components/sections/ProjectTitle";
 
 import Lenis from "lenis";
 import { ReactEventHandler, useEffect } from "react";
+import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   useEffect(() => {
@@ -33,10 +33,11 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <div className="bg-white h-[400vh] relative z-30">
+      <div className="bg-white h-[100vh] sm:h-[300vh] relative z-30">
         <About />
-        <Projects />
+        <ProjectTitle />
       </div>
+      <ProjectList />
       <Contact />
     </main>
   );

@@ -1,55 +1,53 @@
 "use client";
 
 import { ArrowDown, ArrowUpRight, Square } from "lucide-react";
-import Image from "next/image";
 
-export const Projects = () => {
+export const ProjectTitle = () => {
   return (
-    <div className="h-[300vh]">
-      <div className="h-screen flex flex-col items-center justify-center space-y-4">
-        <h1 className="flex justify-center text-9xl font-montserrat uppercase font-bold">
+    <div className="h-[50vh] sm:block hidden">
+      <div className=" flex flex-col items-center justify-center space-y-4">
+        <h1 className="flex justify-center text-5xl sm:text-7xl lg:text-9xl xl:text-[13rem] font-montserrat uppercase font-bold">
           <span className="flex flex-col justify-around text-right items-end">
-            <p className="flex flex-col text-base font-normal">
+            <p className="flex flex-col text-xs font-normal sm:text-lg lg:text-2xl">
               Some<span>featured</span>
             </p>
-
             <Square fill="black" width={10} height={10} />
           </span>
           Projects{" "}
           <span className="flex flex-col justify-around">
-            <p className="flex flex-col text-base font-normal">
+            <p className="flex flex-col text-xs font-normal sm:text-lg lg:text-2xl">
               Fullstack<span>dev.</span>
             </p>
 
             <ArrowUpRight />
           </span>
         </h1>
-        <p className="flex flex-col uppercase text-center pb-20">
+        <p className="flex flex-col uppercase text-center pb-20 sm:text-lg lg:text-2xl">
           Personal projects, School projects,
           <span>some research and playground</span>
         </p>
         <p className="flex justify-center">
-          (
           <span>
             <ArrowDown />
           </span>
-          )
         </p>
       </div>
 
-      <div className="flex flex-col items-center justify-center">
+      {/* <div className="flex flex-col items-center justify-center">
         <div className="pb-4">
           <div className="flex items-center justify-between px-4">
             <p>No. 1</p>
             <p>(2024)</p>
           </div>
-          <Image
-            src="/esemka.png"
-            alt="esemka"
-            height={2160}
-            width={1440}
-            className="p-4"
-          />
+          <div>
+            <Image
+              src="/esemka.png"
+              alt="esemka"
+              height={2160}
+              width={1440}
+              className="p-4"
+            />
+          </div>
           <div className="flex items-center justify-between px-4">
             <p className="text-xl font-montserrat">Esemka mobil</p>
             <p className="text-xs">
@@ -96,7 +94,7 @@ export const Projects = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

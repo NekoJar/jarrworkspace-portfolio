@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { Quote } from "../ui/Quote";
 import { About } from "../ui/About";
+import { HeroTextMobile } from "../HeroTextMobile";
 
 export const Hero = () => {
   const container = useRef(null);
@@ -33,17 +34,23 @@ export const Hero = () => {
     [0, 0.15],
     [1, 0]
   );
+  const opacityContentMobile = useTransform(
+    scrollYProgressOpacity,
+    [0, 1],
+    [1, 0]
+  );
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
   const scaleContent = useTransform(scrollYProgressOpacity, [0, 1], [1, 0]);
   const translateX = useTransform(scrollYProgress, [0, 1], ["0vw", "-44vw"]);
   const translateY = useTransform(scrollYProgress, [0, 1], ["0vh", "-46vh"]);
 
-  const scaleImage = useTransform(scrollYProgressImage, [0, 1], [1, 2]);
+  const scaleImageLaptop = useTransform(scrollYProgressImage, [0, 1], [1, 2]);
+  const scaleImageMobile = useTransform(scrollYProgressImage, [0, 1], [1, 1.3]);
 
   return (
     <>
       <div ref={container} className="h-screen uppercase mb-[20vh]" id="home">
-        <div className="absolute flex justify-center items-center w-[90vw] pl-[10vw] h-screen">
+        <div className="absolute hidden lg:flex justify-center items-center w-[90vw] pl-[10vw] h-screen">
           <motion.div
             style={{ scale, translateX, translateY, height, width }}
             className="fixed mix-blend-exclusion text-white z-50"
@@ -51,12 +58,25 @@ export const Hero = () => {
             <HeroText opacity={opacityContent} scaleContent={scaleContent} />
           </motion.div>
         </div>
+        <div className="absolute lg:hidden flex justify-center items-center w-[90vw] pl-[10vw] h-screen">
+          <div className="fixed mix-blend-exclusion text-white z-20">
+            <HeroTextMobile opacity={opacityContentMobile} />
+          </div>
+        </div>
 
         <div ref={imageContainer} className="h-[280vh] relative">
           <div className="sticky overflow-hidden top-0 h-screen">
             <motion.div
-              style={{ scale: scaleImage }}
-              className="w-screen h-full top-0 absolute flex items-center justify-center"
+              style={{ scale: scaleImageLaptop }}
+              className="w-screen h-full top-0 absolute sm:flex items-center justify-center hidden"
+            >
+              <div className="relative w-[50vw] h-[50vh]">
+                <Image src="/jar.jpg" alt="jar" fill className="object-cover" />
+              </div>
+            </motion.div>
+            <motion.div
+              style={{ scale: scaleImageMobile }}
+              className="w-screen h-full top-0 absolute flex items-center justify-center sm:hidden"
             >
               <div className="relative w-[50vw] h-[50vh]">
                 <Image src="/jar.jpg" alt="jar" fill className="object-cover" />

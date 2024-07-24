@@ -10,7 +10,7 @@ export const HeroText = ({
 }) => {
   return (
     <>
-      <div className="flex items-center text-3xl md:text-5xl xl:text-8xl font-pixel">
+      <div className="hidden lg:flex items-center text-3xl md:text-5xl xl:text-8xl font-pixel">
         <p className="first-letter:italic">Zharfan Hakim</p>
       </div>
 
