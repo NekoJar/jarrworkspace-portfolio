@@ -11,7 +11,7 @@ import { Contact } from "@/components/sections/Contact";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       gestureOrientation: "vertical",
@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <div className="bg-white h-[100vh] sm:h-[300vh] relative z-30">
+      <div className="bg-white h-[100vh] sm:h-[270vh] relative z-30">
         <About />
         <ProjectTitle />
       </div>

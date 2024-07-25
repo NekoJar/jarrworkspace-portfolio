@@ -6,7 +6,7 @@ const About = () => {
     <div className="h-[100vh] sm:h-[200vh] py-[20vh] px-[5vw] flex flex-col items-center justify-center">
       <p className="text-2xl sm:text-5xl font-inter uppercase text-left font-medium text-neutral-500 pb-20 sm:pb-40">
         <span className="flex">
-          <video src="/eye.mp4" height={10} width={90} autoPlay loop />
+          <video src="/eye.mp4" height={10} width={90} autoPlay loop muted />
           Hi I&apos;m{" "}
         </span>
         <span className="font-pixel text-neutral-800 text-3xl sm:text-6xl">

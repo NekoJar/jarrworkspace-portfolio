@@ -11,12 +11,21 @@ export const Navbar = () => {
             <p>Hakim</p>
           </div>
           <div className="flex items-center gap-8 ">
-            <NavLink href="https://www.youtube.com/@fluiecx" label="youtube" />
+            <NavLink
+              href="https://www.youtube.com/@fluiecx"
+              label="youtube"
+              target="_blank"
+            />
             <NavLink
               href="https://www.linkedin.com/in/mzharfanhakim/"
               label="linkedin"
+              target="_blank"
             />
-            <NavLink href="https://github.com/NekoJar" label="GitHub" />
+            <NavLink
+              href="https://github.com/NekoJar"
+              label="GitHub"
+              target="_blank"
+            />
             <NavLink href="mailto:jarrworkspace@gmail.com" label="contact" />
           </div>
         </ul>

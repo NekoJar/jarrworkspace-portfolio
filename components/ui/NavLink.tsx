@@ -7,9 +7,10 @@ import React, { useState } from "react";
 interface NavLinksProps {
   href: string;
   label: string;
+  target?: string;
 }
 
-export const NavLink = ({ href, label }: NavLinksProps) => {
+export const NavLink = ({ href, label, target }: NavLinksProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [scope, animate] = useAnimate();
   const characters = label.split("");
@@ -27,6 +28,7 @@ export const NavLink = ({ href, label }: NavLinksProps) => {
     <Link
       ref={scope}
       href={href}
+      target={target}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       className="overflow-hidden relative z-50"

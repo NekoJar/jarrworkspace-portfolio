@@ -4,9 +4,9 @@ import { ArrowDown, ArrowUpRight, Square } from "lucide-react";
 
 export const ProjectTitle = () => {
   return (
-    <div className="h-[50vh] sm:block hidden">
-      <div className=" flex flex-col items-center justify-center space-y-4">
-        <h1 className="flex justify-center text-5xl sm:text-7xl lg:text-9xl xl:text-[13rem] font-montserrat uppercase font-bold">
+    <div className="h-[20vh] sm:block hidden">
+      <div className=" flex flex-col items-center space-y-4">
+        <h1 className="flex  text-5xl sm:text-7xl lg:text-9xl xl:text-[13rem] font-montserrat uppercase font-bold">
           <span className="flex flex-col justify-around text-right items-end">
             <p className="flex flex-col text-xs font-normal sm:text-lg lg:text-2xl">
               Some<span>featured</span>
