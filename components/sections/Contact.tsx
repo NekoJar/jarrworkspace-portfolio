@@ -38,10 +38,10 @@ export const Contact = () => {
           style={{ height }}
           className="relative h-[70svh] xl:w-[20vw] hidden xl:block"
         >
-          <Image src="/jar-2.jpeg" alt="" fill className="object-cover pb-8" />
+          <Image src="/jar-2.jpg" alt="" fill className="object-cover pb-8" />
         </motion.div>
         <div className="relative h-[80svh] w-full xl:hidden block">
-          <Image src="/jar-2.jpeg" alt="" fill className="object-cover pb-8" />
+          <Image src="/jar-2.jpg" alt="" fill className="object-cover pb-8" />
         </div>
       </div>
       <div className="h-[40vh] sm:h-[20vh] flex justify-between items-center gap-4 text-sm">
