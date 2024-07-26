@@ -18,7 +18,7 @@ export const ProjectList = () => {
     offset: ["start start", "end end"],
   });
 
-  const scale = useTransform(scrollYProgressProjects, [0, 1], [1.3, 1]);
+  const scale = useTransform(scrollYProgressProjects, [0, 1], [1.4, 1]);
 
   const y = useTransform(scrollYProgressContainer, [0, 1], [-1000, 0]);
 
@@ -37,11 +37,12 @@ export const ProjectList = () => {
                   className="w-full h-full top-0 absolute flex items-center justify-center"
                 >
                   <div className="relative h-[75vh] w-[75vw]">
-                    <Image
-                      src="/esemka.png"
-                      fill
-                      alt="image"
-                      className="object-cover"
+                    <video
+                      src="/projects.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      className="object-cover w-full h-full"
                     />
                   </div>
                 </motion.div>
@@ -52,13 +53,7 @@ export const ProjectList = () => {
       </div>
       <div className="block sm:hidden">
         <div className="relative ">
-          <Image
-            src="/esemka.png"
-            height={1920}
-            width={1080}
-            alt="image"
-            className=""
-          />
+          <video src="/projects.mp4" autoPlay loop muted />
         </div>
       </div>
     </>

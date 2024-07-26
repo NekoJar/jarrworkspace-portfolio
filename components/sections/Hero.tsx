@@ -74,14 +74,16 @@ export const Hero = () => {
                 <Image src="/jar.jpg" alt="jar" fill className="object-cover" />
               </div>
             </motion.div>
-            <motion.div
-              style={{ scale: scaleImageMobile }}
-              className="w-screen h-full top-0 absolute flex items-center justify-center sm:hidden"
-            >
+            <div className="w-screen h-full top-0 absolute flex items-center justify-center sm:hidden">
               <div className="relative w-[50vw] h-[50vh]">
-                <Image src="/jar.jpg" alt="jar" fill className="object-cover" />
+                <Image
+                  src="/jar-mobile.jpg"
+                  alt="jar"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
