@@ -17,7 +17,7 @@ export const Contact = () => {
   return (
     <div
       ref={imageContainer}
-      className="relative h-screen bg-neutral-100 sm:mt-[100vh] p-8"
+      className="relative h-screen bg-neutral-100 sm:mt-[100vh] p-8 z-10"
     >
       <div className="h-[40vh] md:h-[60vh] flex flex-col xl:flex-row justify-between items-start xl:items-end border-b-2 border-black">
         <div className="leading-tight font-montserrat">

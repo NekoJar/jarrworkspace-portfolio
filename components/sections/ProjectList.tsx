@@ -1,12 +1,13 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
+import StickyCursor from "../ui/StickyCursor";
 
 export const ProjectList = () => {
   const container = useRef(null);
   const projects = useRef(null);
+
+  const stickyElement = useRef(null);
 
   const { scrollYProgress: scrollYProgressContainer } = useScroll({
     target: container,
@@ -46,11 +47,13 @@ export const ProjectList = () => {
                     />
                   </div>
                 </motion.div>
+                <StickyCursor stickyElement={stickyElement} />
               </div>
             </div>
           </motion.div>
         </div>
       </div>
+
       <div className="block sm:hidden">
         <div className="relative ">
           <video src="/projects.mp4" autoPlay loop muted />
