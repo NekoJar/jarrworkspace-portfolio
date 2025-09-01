@@ -2,7 +2,7 @@
 import { stagger, useAnimate } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 
 interface NavLinksProps {
   href: string;
@@ -26,6 +26,7 @@ export const NavLink = ({ href, label, target }: NavLinksProps) => {
 
   return (
     <Link
+      key={label}
       ref={scope}
       href={href}
       target={target}
@@ -34,22 +35,20 @@ export const NavLink = ({ href, label, target }: NavLinksProps) => {
       className="overflow-hidden relative z-50"
     >
       {characters.map((letter, index) => (
-        <>
-          <span
-            data-letter={letter}
-            className="letter relative inline-block h-6 leading-5 sm:h-6 after:absolute after:left-0 after:top-full after:h-8 after:content-[attr(data-letter)]"
-            key={`${letter}-${index}`}
-          >
-            {letter}
-          </span>
-          <span
-            style={{
-              transform: isHovered ? "scaleX(1)" : "scaleX(0)",
-            }}
-            className="absolute bottom-0 -left-2 -right-2 h-0.5 origin-left scale-x-0 bg-neutral-300 transition-transform duration-1000 ease-out"
-          />
-        </>
+        <span
+          data-letter={letter}
+          className="letter relative inline-block h-6 leading-5 sm:h-6 after:absolute after:left-0 after:top-full after:h-8 after:content-[attr(data-letter)]"
+          key={`${letter}-${index}`}
+        >
+          {letter}
+        </span>
       ))}
+      <span
+        style={{
+          transform: isHovered ? "scaleX(1)" : "scaleX(0)",
+        }}
+        className="absolute bottom-0 -left-2 -right-2 h-0.5 origin-left scale-x-0 bg-neutral-300 transition-transform duration-1000 ease-out"
+      />
     </Link>
   );
 };
