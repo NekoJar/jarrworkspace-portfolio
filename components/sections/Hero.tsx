@@ -14,17 +14,14 @@ export const Hero = () => {
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end start"],
-    smooth: 1,
   });
   const { scrollYProgress: scrollYProgressOpacity } = useScroll({
     target: container,
     offset: ["start start", "end center"],
-    smooth: 1,
   });
   const { scrollYProgress: scrollYProgressImage } = useScroll({
     target: imageContainer,
     offset: ["start start", "end end"],
-    smooth: 1,
   });
 
   const height = useTransform(scrollYProgress, [0, 1], ["60vh", "10vh"]);
@@ -45,7 +42,6 @@ export const Hero = () => {
   const translateY = useTransform(scrollYProgress, [0, 1], ["0vh", "-46vh"]);
 
   const scaleImageLaptop = useTransform(scrollYProgressImage, [0, 1], [1, 2]);
-  const scaleImageMobile = useTransform(scrollYProgressImage, [0, 1], [1, 1.3]);
 
   return (
     <>
