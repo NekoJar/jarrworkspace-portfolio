@@ -4,20 +4,22 @@ import z from "zod";
 const handler = createMcpHandler(
   (server) => {
     server.tool(
-      "jarExpertise",
-      "Give a list of expertise that jar's have",
+      "courseRecommender",
+      "Give a course recommendation based on experience level",
       {
-        expertiseCategory: z.enum(["programming", "design"]),
+        experienceLevel: z.enum(["beginner", "intermediate", "advanced"]),
       },
-      ({ expertiseCategory }) => ({
+      ({ experienceLevel }) => ({
         content: [
           {
             type: "text",
-            text: `Here are jar's expertise in ${
-              expertiseCategory === "programming"
-                ? "Next.js, React, Node.js"
-                : "Figma, Photoshop, Illustrator"
-            }`,
+            text: `I recommend you take the ${
+              experienceLevel === "beginner"
+                ? "Professional JavaScript"
+                : experienceLevel === "intermediate"
+                ? "Advanced JavaScript"
+                : "JavaScript Mastery"
+            } course.`,
           },
         ],
       })
@@ -25,7 +27,11 @@ const handler = createMcpHandler(
   },
   {
     capabilities: {
-      tools: { jarExpertise: { description: "Get a list of jar's expertise" } },
+      tools: {
+        courseRecommender: {
+          description: "Get a list of course recommendations",
+        },
+      },
     },
   },
   {
