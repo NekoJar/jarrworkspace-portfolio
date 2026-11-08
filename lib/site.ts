@@ -12,6 +12,10 @@ export const siteCopy = {
       en: "Based in Indonesia · Open to opportunities in Japan and remote teams",
       ja: "インドネシア在住 · 日本およびグローバルリモートチームの機会を歓迎",
     },
+    portraitAlt: {
+      en: "Portrait of Zharfan Hakim",
+      ja: "Zharfan Hakimのポートレート",
+    },
     cta: { en: "View Work", ja: "作品を見る" },
     ctaAlt: { en: "Download Resume", ja: "履歴書をダウンロード" },
     featured: { en: "Featured work", ja: "注目の作品" },

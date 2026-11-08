@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
 import { useLocale } from "@/components/layout/LocaleProvider";
@@ -14,8 +15,19 @@ export function Hero() {
     <section id="home" className="px-5 pb-16 pt-28 sm:px-8 sm:pb-24 sm:pt-36">
       <div className="mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-7">
-          <p className="eyebrow">{t("hero.title")}</p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl md:text-6xl">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/jar-2.jpg"
+              alt={t("hero.portraitAlt")}
+              width={96}
+              height={96}
+              priority
+              sizes="48px"
+              className="h-12 w-12 shrink-0 rounded-full object-cover object-[50%_13%] grayscale ring-1 ring-black/10 dark:ring-white/15"
+            />
+            <p className="eyebrow">{t("hero.title")}</p>
+          </div>
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl md:text-6xl">
             {t("hero.name")}
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-xl">

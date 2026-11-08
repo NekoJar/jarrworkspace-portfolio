@@ -6,6 +6,7 @@ import { LocaleProvider } from "@/components/layout/LocaleProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { themeInitScript } from "@/lib/theme";
+import { homeSocialImage } from "@/lib/metadata";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
@@ -33,12 +34,21 @@ export const metadata: Metadata = {
       "Portfolio of Zharfan Hakim, a Full-Stack Engineer building production web applications and AI-powered products.",
     url: "https://jarrworkspace.com",
     siteName: "Zharfan Hakim",
+    images: [
+      {
+        url: homeSocialImage,
+        width: 1200,
+        height: 630,
+        alt: "Zharfan Hakim, full-stack engineer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Zharfan Hakim | Full-Stack Engineer",
     description:
       "Portfolio of Zharfan Hakim, a Full-Stack Engineer building production web applications and AI-powered products.",
+    images: [homeSocialImage],
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
