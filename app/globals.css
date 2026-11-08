@@ -104,12 +104,14 @@
   }
 
   /* Japanese typesetting: looser leading, no Latin-style tracking or uppercasing. */
-  html:lang(ja) p:not(.eyebrow),
+  html:lang(ja) p,
   html:lang(ja) li {
     line-height: 1.9;
   }
 
-  html:lang(ja) :is(h1, h2, h3) {
+  html:lang(ja) h1,
+  html:lang(ja) h2,
+  html:lang(ja) h3 {
     letter-spacing: 0.01em;
     line-height: 1.4;
   }
@@ -117,5 +119,17 @@
   html:lang(ja) .eyebrow {
     text-transform: none;
     letter-spacing: 0.12em;
+  }
+}
+
+/* Resume download button - download logo */
+@layer components {
+  .resume-download {
+    @apply relative inline-flex items-center justify-center rounded-md border border-black/10 dark:border-white/10 bg-white px-4 py-1 text-xs font-medium text-neutral-600 transition hover:bg-black/5 dark:bg-white/10 dark:hover:bg-white/5;
+  }
+
+  .resume-download::after {
+    @apply absolute inset-0 rounded-md border border-black/10 dark:border-white/10;
+    @apply flex items-center justify-center;
   }
 }

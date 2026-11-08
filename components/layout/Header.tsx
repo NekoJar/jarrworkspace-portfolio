@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLocale } from "./LocaleProvider";
 import { ThemeToggle } from "./ThemeToggle";
+import { ResumeZip } from "../sections/ResumeZip";
 
 const navItems = [
   { key: "work", label: "Work", href: "#work" },
@@ -47,12 +48,7 @@ export function Header() {
           >
             {t("nav.lang")}
           </button>
-          <Link
-            href="/resume.pdf"
-            className="text-sm font-medium text-black transition hover:underline dark:text-white"
-          >
-            {t("nav.resume")}
-          </Link>
+          <ResumeZip />
         </div>
       </div>
     </header>

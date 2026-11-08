@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
 import { useLocale } from "@/components/layout/LocaleProvider";
+import { ResumeZip } from "./ResumeZip";
 
 const featured = projects.find((project) => project.featured) ?? projects[0];
 
@@ -41,13 +42,7 @@ export function Hero() {
             >
               {t("hero.cta")}
             </Link>
-            <Link
-              href="/resume.pdf"
-              target="_blank"
-              className="rounded-md border border-black/10 dark:border-white/10 px-6 py-3 text-sm font-medium text-neutral-700 dark:text-neutral-300 transition hover:bg-black/5 dark:hover:bg-white/5"
-            >
-              {t("hero.ctaAlt")}
-            </Link>
+            <ResumeZip native_btn={true} />
           </div>
           <div className="mt-10 flex items-center gap-2 font-mono text-xs tracking-tight text-neutral-400 dark:text-neutral-500">
             <Link

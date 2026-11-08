@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "install:vercel": "npm i --legacy-peer-deps"
+    "install:vercel": "npm i --legacy-peer-deps",
+    "zip:resume": "node scripts/build-resume-zip.js"
   },
   "dependencies": {
     "next": "^16.4.5",

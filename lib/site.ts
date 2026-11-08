@@ -20,6 +20,9 @@ export const siteCopy = {
     ctaAlt: { en: "Download Resume", ja: "履歴書をダウンロード" },
     featured: { en: "Featured work", ja: "注目の作品" },
   },
+  credentialSection: {
+    title: { en: "Credentials", ja: "資格・認定" },
+  },
   workSection: {
     intro: { en: "Selected Work", ja: "主な作品" },
     sub: {
@@ -34,7 +37,7 @@ export const siteCopy = {
     intro: { en: "Experience", ja: "経験" },
     company: { en: "80&Co / Oct-Path", ja: "80&Co / Oct-Path" },
     role: { en: "Full-Stack Engineer", ja: "フルスタックエンジニア" },
-    period: { en: "2025 — Present", ja: "2025 — 現在" },
+    period: { en: "2024 — Present", ja: "2024 — 現在" },
     summary: {
       en: "Building production web applications and AI-powered systems for Japanese clients and internal products.",
       ja: "日本拠点のクライアントと社内プロダクト向けに、プロダクション向けWebアプリケーションとAIシステムを構築。",
@@ -69,7 +72,10 @@ export const siteCopy = {
       ja: "日本およびグローバルリモートチームでのフルスタック、バックエンド、AIエンジニアリング機会を歓迎します。",
     },
     email: { en: "jarrworkspace@gmail.com", ja: "jarrworkspace@gmail.com" },
-    social: { en: "LinkedIn · GitHub · Resume", ja: "LinkedIn · GitHub · 履歴書" },
+    social: {
+      en: "LinkedIn · GitHub · Resume",
+      ja: "LinkedIn · GitHub · 履歴書",
+    },
   },
   footer: {
     name: { en: "Zharfan Hakim", ja: "Zharfan Hakim" },
@@ -104,7 +110,9 @@ export const siteCopy = {
 } as const;
 
 type CopyPath<T> = {
-  [K in keyof T & string]: T[K] extends LocalizedText ? K : `${K}.${CopyPath<T[K]>}`;
+  [K in keyof T & string]: T[K] extends LocalizedText
+    ? K
+    : `${K}.${CopyPath<T[K]>}`;
 }[keyof T & string];
 
 export type SiteCopyKey = CopyPath<typeof siteCopy>;

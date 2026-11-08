@@ -3,6 +3,7 @@
 
 import Link from "next/link";
 import { useLocale } from "@/components/layout/LocaleProvider";
+import { ResumeZip } from "./ResumeZip";
 
 export function Contact() {
   const { t } = useLocale();
@@ -39,13 +40,7 @@ export function Contact() {
             >
               GitHub
             </Link>
-            <Link
-              href="/resume.pdf"
-              target="_blank"
-              className="text-sm font-medium text-neutral-600 dark:text-neutral-400 transition hover:text-black dark:hover:text-white"
-            >
-              Resume
-            </Link>
+            <ResumeZip />
           </div>
         </div>
       </div>
