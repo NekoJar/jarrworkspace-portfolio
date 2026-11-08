@@ -28,7 +28,6 @@ export function LocaleProvider({
 
   const t = useCallback(
     (key: string): string => {
-      const localeSuffix = currentLocale === "ja" ? "ja" : "en";
       const keys = key.split(".");
       let value: unknown = siteCopy;
       for (const k of keys) {
@@ -38,6 +37,10 @@ export function LocaleProvider({
           value = undefined;
           break;
         }
+      }
+      if (value && typeof value === "object" && !Array.isArray(value)) {
+        const localized = value as Record<string, string>;
+        return localized[currentLocale] ?? localized["en"] ?? key;
       }
       return typeof value === "string" ? value : key;
     },
