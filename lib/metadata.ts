@@ -1,40 +1,27 @@
+import type { Metadata } from "next";
+import { cookies } from "next/headers";
+import type { Locale } from "./i18n";
+import { projects } from "./projects";
 import type { Project } from "./types";
-import { siteCopy } from "./site";
 
-const BASE_URL = "https://jarrworkspace.com";
+export const SITE_URL = "https://jarrworkspace.com";
 
-export function getBaseMetadata(locale: "en" | "ja") {
-  const copy = locale === "ja" ? siteCopy : siteCopy;
+export function getProjectMetadata(project: Project, locale: Locale): Metadata {
+  const title = project.title[locale];
+  const description = project.description[locale];
+  const url = `${SITE_URL}/work/${project.slug}`;
+
   return {
-    title: "Zharfan Hakim | Full-Stack Engineer",
-    description:
-      "Portfolio of Zharfan Hakim, a Full-Stack Engineer building production web applications and AI-powered products.",
-    keywords: [
-      "Zharfan Hakim",
-      "Full-Stack Engineer",
-      "Software Engineer",
-      "AI Engineer",
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Japan",
-    ],
-  };
-}
-
-export function getProjectMetadata(project: Project, locale: "en" | "ja") {
-  const title = project.title.ja ?? project.title.en;
-  const description = project.description.ja ?? project.description.en;
-  return {
-    title,
+    title: `${title} | Zharfan Hakim`,
     description,
-    keywords: [...(project.technologies || []), "Zharfan Hakim", "Full-Stack Engineer"],
+    keywords: [...project.technologies, "Zharfan Hakim", "Full-Stack Engineer"],
+    alternates: { canonical: url },
     openGraph: {
       type: "website",
-      locale,
+      locale: locale === "ja" ? "ja_JP" : "en_US",
       title,
       description,
-      url: `${BASE_URL}/work/${project.slug}`,
+      url,
       siteName: "Zharfan Hakim",
     },
     twitter: {
@@ -42,6 +29,15 @@ export function getProjectMetadata(project: Project, locale: "en" | "ja") {
       title,
       description,
     },
-    robots: { index: true, follow: true },
   };
+}
+
+export async function getCaseStudyMetadata(slug: string): Promise<Metadata> {
+  const project = projects.find((item) => item.slug === slug);
+  if (!project) return {};
+
+  const cookieStore = await cookies();
+  const locale: Locale = cookieStore.get("locale")?.value === "ja" ? "ja" : "en";
+
+  return getProjectMetadata(project, locale);
 }

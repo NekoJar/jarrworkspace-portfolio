@@ -14,6 +14,7 @@ export const siteCopy = {
     },
     cta: { en: "View Work", ja: "作品を見る" },
     ctaAlt: { en: "Download Resume", ja: "履歴書をダウンロード" },
+    featured: { en: "Featured work", ja: "注目の作品" },
     social: { en: "GitHub · LinkedIn", ja: "GitHub · LinkedIn" },
   },
   workSection: {
@@ -22,6 +23,9 @@ export const siteCopy = {
       en: "Production applications, AI systems, and full-stack products I have worked on.",
       ja: "これまで手がけてきたプロダクションアプリケーション、AIシステム、フルスタックプロダクト。",
     },
+    viewCaseStudy: { en: "View case study", ja: "ケーススタディを見る" },
+    live: { en: "Live site", ja: "公開サイト" },
+    repo: { en: "Source", ja: "ソースコード" },
   },
   experienceSection: {
     intro: { en: "Experience", ja: "経験" },
@@ -69,6 +73,22 @@ export const siteCopy = {
     title: { en: "Full-Stack Engineer", ja: "フルスタックエンジニア" },
     links: { en: "GitHub · LinkedIn · Email", ja: "GitHub · LinkedIn · Email" },
     copyright: { en: "© 2026 Zharfan Hakim", ja: "© 2026 Zharfan Hakim" },
+  },
+  caseStudy: {
+    allWork: { en: "All work", ja: "すべての制作" },
+    case: { en: "Case", ja: "ケース" },
+    onThisPage: { en: "On this page", ja: "目次" },
+    role: { en: "Role", ja: "役割" },
+    type: { en: "Type", ja: "種別" },
+    result: { en: "Headline result", ja: "主な成果" },
+    results: { en: "Results", ja: "成果" },
+    stack: { en: "Stack", ja: "技術スタック" },
+    previous: { en: "Previous", ja: "前の制作" },
+    next: { en: "Next", ja: "次の制作" },
+  },
+  theme: {
+    toDark: { en: "Switch to dark theme", ja: "ダークテーマに切り替える" },
+    toLight: { en: "Switch to light theme", ja: "ライトテーマに切り替える" },
   },
   nav: {
     work: { en: "Work", ja: "作品" },

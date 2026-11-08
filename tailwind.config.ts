@@ -12,6 +12,7 @@ const config = {
   theme: {
     fontFamily: {
       roboto: ["var(--font-roboto)"],
+      mono: ["var(--font-roboto)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       montserrat: ["var(--font-montserrat)"],
       inter: ["var(--font-inter)"],
       pixel: ["var(--font-pixel)"],

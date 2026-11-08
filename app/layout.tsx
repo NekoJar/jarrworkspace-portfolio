@@ -5,6 +5,7 @@ import "./globals.css";
 import { LocaleProvider } from "@/components/layout/LocaleProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { themeInitScript } from "@/lib/theme";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
@@ -61,8 +62,11 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale}>
-      <body className={`${inter.variable} ${montserrat.variable} ${roboto.variable} font-roboto antialiased`}>
+    <html lang={locale} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className={`${inter.variable} ${montserrat.variable} ${roboto.variable} antialiased`}>
         <LocaleProvider locale={locale}>
           <Header />
           {children}

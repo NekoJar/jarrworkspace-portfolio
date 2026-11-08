@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { type Locale } from "../../lib/i18n";
 import { siteCopy, type SiteCopyKey } from "../../lib/site";
 
@@ -20,9 +20,15 @@ export function LocaleProvider({
   locale: Locale;
 }) {
   const [currentLocale, setLocaleState] = useState<Locale>(locale);
+  const syncedFromStorage = useRef(false);
 
   const setLocale = useCallback((next: Locale) => {
-    localStorage.setItem("locale", next);
+    try {
+      localStorage.setItem("locale", next);
+    } catch {
+      // Storage can be unavailable; the cookie below still carries the choice.
+    }
+    document.cookie = `locale=${next}; path=/; max-age=31536000; samesite=lax`;
     setLocaleState(next);
   }, []);
 
@@ -47,6 +53,24 @@ export function LocaleProvider({
     [currentLocale]
   );
 
+  // A choice made before the cookie existed only lives in localStorage. Adopt
+  // it once on mount so earlier visitors aren't pinned to the default locale.
+  useEffect(() => {
+    if (syncedFromStorage.current) return;
+    syncedFromStorage.current = true;
+
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem("locale");
+    } catch {
+      return;
+    }
+
+    if ((stored === "en" || stored === "ja") && stored !== currentLocale) {
+      setLocale(stored);
+    }
+  }, [currentLocale, setLocale]);
+
   useEffect(() => {
     document.documentElement.lang = currentLocale;
   }, [currentLocale]);
@@ -65,6 +89,3 @@ export function useLocale(): LocaleContextValue {
   }
   return context;
 }
-
-
-

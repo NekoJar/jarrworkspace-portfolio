@@ -62,6 +62,19 @@ export const projects: Project[] = [
       { en: "Backend and API integration", ja: "バックエンドとAPIの統合" },
     ],
     technologies: ["Next.js", "TypeScript", "OpenAI", "Vercel AI SDK", "Amazon Transcribe"],
+    results: [
+      {
+        metric: "~800ms",
+        description: { en: "Voice and text response latency", ja: "音声・テキスト応答の遅延" },
+      },
+      {
+        metric: "Streaming",
+        description: {
+          en: "Answers render as they arrive instead of after the full response",
+          ja: "応答は完了を待たず、届いた順に描画される",
+        },
+      },
+    ],
     featured: true,
     image: "/jar-mobile.jpg",
   },
@@ -87,6 +100,22 @@ export const projects: Project[] = [
       { en: "Web3 integration", ja: "Web3連携" },
     ],
     technologies: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL"],
+    results: [
+      {
+        metric: "One session",
+        description: {
+          en: "Checkout and wallet actions complete without leaving the flow",
+          ja: "購入とウォレット操作がフローを離れずに完了する",
+        },
+      },
+      {
+        metric: "One codebase",
+        description: {
+          en: "Web and Web3 surfaces share a single stack",
+          ja: "WebとWeb3の画面が単一のスタックを共有する",
+        },
+      },
+    ],
     featured: true,
     image: "/jar.jfif",
   },
