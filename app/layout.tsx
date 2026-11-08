@@ -1,27 +1,73 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
+import { Inter, Montserrat, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import { inter, montserrat, pixel, roboto } from "@/components/fonts";
-import { Navbar } from "@/components/Navbar";
+import { LocaleProvider } from "@/components/layout/LocaleProvider";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
+const roboto = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto" });
 
 export const metadata: Metadata = {
-  title: "JarrWorkspace - Front End Developer | UI/UX Designer",
+  title: "Zharfan Hakim | Full-Stack Engineer",
   description:
-    "A personal website for my portfolio. Made by Fluiecx using Next JS, TypeScript, Tailwind CSS, Framer Motion, and GSAP.",
+    "Portfolio of Zharfan Hakim, a Full-Stack Engineer building production web applications and AI-powered products.",
+  keywords: [
+    "Zharfan Hakim",
+    "Full-Stack Engineer",
+    "Software Engineer",
+    "AI Engineer",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Japan",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    title: "Zharfan Hakim | Full-Stack Engineer",
+    description:
+      "Portfolio of Zharfan Hakim, a Full-Stack Engineer building production web applications and AI-powered products.",
+    url: "https://jarrworkspace.com",
+    siteName: "Zharfan Hakim",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zharfan Hakim | Full-Stack Engineer",
+    description:
+      "Portfolio of Zharfan Hakim, a Full-Stack Engineer building production web applications and AI-powered products.",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+    ],
+  },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const localeCookie = cookieStore.get("locale");
+  const locale: "en" | "ja" = localeCookie?.value === "ja" ? "ja" : "en";
+
   return (
-    <html lang="en">
-      <body
-        className={`${montserrat.variable} ${roboto.variable} ${inter.variable} ${pixel.variable}  font-roboto bg-neutral-100`}
-      >
-        <Navbar />
-        {children}
+    <html lang={locale}>
+      <body className={`${inter.variable} ${montserrat.variable} ${roboto.variable} font-roboto antialiased`}>
+        <LocaleProvider locale={locale}>
+          <Header />
+          {children}
+          <Footer />
+        </LocaleProvider>
       </body>
     </html>
   );
 }
+
+
+

@@ -1,92 +1,42 @@
 "use client";
-import React, { useRef } from "react";
-import { HeroText } from "../HeroText";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
-import { Quote } from "../ui/Quote";
-import { About } from "../ui/About";
-import { HeroTextMobile } from "../HeroTextMobile";
 
-export const Hero = () => {
-  const container = useRef(null);
-  const imageContainer = useRef(null);
+import Link from "next/link";
+import { useLocale } from "@/components/layout/LocaleProvider";
 
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end start"],
-    smooth: 1,
-  });
-  const { scrollYProgress: scrollYProgressOpacity } = useScroll({
-    target: container,
-    offset: ["start start", "end center"],
-    smooth: 1,
-  });
-  const { scrollYProgress: scrollYProgressImage } = useScroll({
-    target: imageContainer,
-    offset: ["start start", "end end"],
-    smooth: 1,
-  });
-
-  const height = useTransform(scrollYProgress, [0, 1], ["60vh", "10vh"]);
-  const width = useTransform(scrollYProgress, [0, 1], ["80vw", "20vw"]);
-  const opacityContent = useTransform(
-    scrollYProgressOpacity,
-    [0, 0.15],
-    [1, 0]
-  );
-  const opacityContentMobile = useTransform(
-    scrollYProgressOpacity,
-    [0, 1],
-    [1, 0]
-  );
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
-  const scaleContent = useTransform(scrollYProgressOpacity, [0, 1], [1, 0]);
-  const translateX = useTransform(scrollYProgress, [0, 1], ["0vw", "-44vw"]);
-  const translateY = useTransform(scrollYProgress, [0, 1], ["0vh", "-46vh"]);
-
-  const scaleImageLaptop = useTransform(scrollYProgressImage, [0, 1], [1, 2]);
-  const scaleImageMobile = useTransform(scrollYProgressImage, [0, 1], [1, 1.3]);
+export function Hero() {
+  const { t } = useLocale();
 
   return (
-    <>
-      <div ref={container} className="h-screen uppercase mb-[20vh]" id="home">
-        <div className="absolute hidden lg:flex justify-center items-center w-[90vw] pl-[10vw] h-screen">
-          <motion.div
-            style={{ scale, translateX, translateY, height, width }}
-            className="fixed mix-blend-exclusion text-white z-50"
+    <section id="home" className="flex min-h-screen flex-col justify-between px-5 py-24 sm:px-8 sm:py-32">
+      <div>
+        <p className="text-xs font-medium uppercase tracking-widest text-neutral-400">
+          {t("hero.title")}
+        </p>
+        <h1 className="mt-2 text-4xl font-semibold tracking-tight text-neutral-900 sm:text-5xl md:text-6xl">
+          {t("hero.name")}
+        </h1>
+        <p className="mt-4 max-w-xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
+          {t("hero.summary")}
+        </p>
+        <p className="mt-6 text-sm text-neutral-500">{t("hero.based")}</p>
+        <div className="mt-8 flex gap-4">
+          <Link
+            href="#work"
+            className="rounded-md bg-black px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800"
           >
-            <HeroText opacity={opacityContent} scaleContent={scaleContent} />
-          </motion.div>
-        </div>
-        <div className="absolute lg:hidden flex justify-center items-center w-[90vw] pl-[10vw] h-screen">
-          <div className="fixed mix-blend-exclusion text-white z-20">
-            <HeroTextMobile opacity={opacityContentMobile} />
-          </div>
-        </div>
-
-        <div ref={imageContainer} className="h-[280vh] relative">
-          <div className="sticky overflow-hidden top-0 h-screen">
-            <motion.div
-              style={{ scale: scaleImageLaptop }}
-              className="w-screen h-full top-0 absolute sm:flex items-center justify-center hidden"
-            >
-              <div className="relative w-[50vw] h-[50vh]">
-                <Image src="/jar.jpg" alt="jar" fill className="object-cover" />
-              </div>
-            </motion.div>
-            <div className="w-screen h-full top-0 absolute flex items-center justify-center sm:hidden">
-              <div className="relative w-[50vw] h-[50vh]">
-                <Image
-                  src="/jar-mobile.jpg"
-                  alt="jar"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
+            {t("hero.cta")}
+          </Link>
+          <Link
+            href="#contact"
+            className="rounded-md border border-black/10 px-6 py-3 text-sm font-medium text-neutral-700 transition hover:bg-black/5"
+          >
+            {t("hero.ctaAlt")}
+          </Link>
         </div>
       </div>
-    </>
+      <div className="flex gap-4 text-sm text-neutral-500">
+        <span>{t("hero.social")}</span>
+      </div>
+    </section>
   );
-};
+}

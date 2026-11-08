@@ -1,44 +1,22 @@
-"use client";
-import About from "@/components/sections/About";
-import { ProjectList } from "@/components/sections/ProjectList";
 import { Hero } from "@/components/sections/Hero";
-import { ProjectTitle } from "@/components/sections/ProjectTitle";
-
-import Lenis from "lenis";
-import { ReactEventHandler, useEffect } from "react";
+import { SelectedWork } from "@/components/sections/SelectedWork";
+import { Experience } from "@/components/sections/Experience";
+import { Stack } from "@/components/sections/Stack";
+import { Approach } from "@/components/sections/Approach";
+import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      gestureOrientation: "vertical",
-    });
-
-    lenis.on("scroll", (e: ReactEventHandler) => {
-      console.log(e);
-    });
-
-    function raf(time: number) {
-      lenis.raf(time / 2);
-
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
-
   return (
-    <main>
+    <main className="bg-[#f5f5f5] text-neutral-900">
       <Hero />
-      <div className="bg-white h-[100vh] sm:h-[270vh] relative z-30">
-        <About />
-        <ProjectTitle />
-      </div>
-      <ProjectList />
+      <SelectedWork />
+      <Experience />
+      <Stack />
+      <Approach />
+      <About />
       <Contact />
     </main>
   );
 }
+
