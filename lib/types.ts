@@ -3,9 +3,12 @@ export type LocalizedText = {
   ja: string;
 };
 
+export type ProjectResult = {
+  en: string;
+  ja: string;
+};
 export type ProjectMetric = {
-  metric: string;
-  description: LocalizedText;
+  results?: ProjectResult[];
 };
 
 export type CaseStudyStep = {
@@ -42,7 +45,7 @@ export type Project = {
   description: LocalizedText;
   contribution: LocalizedText[];
   technologies: string[];
-  results?: ProjectMetric[];
+  results?: ProjectResult[];
   featured: boolean;
   image: string;
   screenshot?: string;

@@ -25,16 +25,20 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "OpenAI", "Gemini", "OCR", "AWS", "PostgreSQL"],
     results: [
       {
-        metric: "420 → 106",
-        description: { en: "AI calls per evaluation", ja: "評価あたりのAI呼び出し回数" },
+        en: "Reduced redundant AI model calls through workflow optimization.",
+        ja: "ワークフローの最適化により、不要なAIモデル呼び出しを削減。",
       },
       {
-        metric: "$22.96 → $10.83",
-        description: { en: "Processing cost per run", ja: "実行あたりの処理コスト" },
+        en: "Improved retrieval and verification of engineering drawing requirements.",
+        ja: "図面要件の検索・検証精度を改善。",
       },
       {
-        metric: "$1.44 → $0.72",
-        description: { en: "Cost per requirement", ja: "要件あたりのコスト" },
+        en: "Refined evaluation logic through iterative testing and analysis.",
+        ja: "継続的なテストと分析を通じて、評価ロジックを改善。",
+      },
+      {
+        en: "Improved processing efficiency while maintaining the verification workflow.",
+        ja: "検証ワークフローを維持しながら、処理効率を改善。",
       },
     ],
     featured: true,
@@ -64,15 +68,20 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "OpenAI", "Vercel AI SDK", "Amazon Transcribe"],
     results: [
       {
-        metric: "~800ms",
-        description: { en: "Voice and text response latency", ja: "音声・テキスト応答の遅延" },
+        en: "AI-powered reading interaction with voice and text responses.",
+        ja: "音声とテキストの応答によるAI読み上げ対話。",
       },
       {
-        metric: "Streaming",
-        description: {
-          en: "Answers render as they arrive instead of after the full response",
-          ja: "応答は完了を待たず、届いた順に描画される",
-        },
+        en: "Real-time interaction with streaming responses and interruption handling.",
+        ja: "ストリーミング応答と中断対応によるリアルタイム対話。",
+      },
+      {
+        en: "Speech recognition integration for voice input.",
+        ja: "音声入力のための音声認識連携。",
+      },
+      {
+        en: "Frontend UX and backend/API integration for the assistant.",
+        ja: "アシスタントのフロントエンドUXとバックエンド/API統合。",
       },
     ],
     featured: true,
@@ -102,18 +111,16 @@ export const projects: Project[] = [
     technologies: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL"],
     results: [
       {
-        metric: "One session",
-        description: {
-          en: "Checkout and wallet actions complete without leaving the flow",
-          ja: "購入とウォレット操作がフローを離れずに完了する",
-        },
+        en: "Full-stack application development across frontend, backend, and database.",
+        ja: "フロントエンド、バックエンド、データベースを横断するフルスタック開発。",
       },
       {
-        metric: "One codebase",
-        description: {
-          en: "Web and Web3 surfaces share a single stack",
-          ja: "WebとWeb3の画面が単一のスタックを共有する",
-        },
+        en: "E-commerce functionality integrated with Web3 workflows.",
+        ja: "Web3ワークフローと統合されたEC機能。",
+      },
+      {
+        en: "Single codebase for web and Web3 surfaces.",
+        ja: "WebとWeb3の画面を単一のコードベースで提供。",
       },
     ],
     featured: true,

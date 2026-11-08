@@ -44,8 +44,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         {result && (
           <div className="mt-6 border-t border-black/5 dark:border-white/10 pt-4">
-            <p className="font-mono text-2xl tracking-tight text-neutral-900 dark:text-neutral-100">{result.metric}</p>
-            <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">{result.description[locale]}</p>
+            <p className="font-mono text-2xl tracking-tight text-neutral-900 dark:text-neutral-100">{result[locale]}</p>
+            <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400"></p>
           </div>
         )}
 

@@ -14,8 +14,8 @@ export const caseStudies: Record<string, CaseStudyContent> = {
   "blueprint-analysis": {
     slug: "blueprint-analysis",
     outcome: {
-      en: "Halved the cost of every evaluation — 420 to 106 AI calls per run — while keeping each requirement traceable to the drawing evidence behind it.",
-      ja: "評価1回あたりのAI呼び出しを420回から106回に削減し、コストを半減。各要件は図面の根拠まで追跡できる状態を保った。",
+      en: "Optimized AI processing and improved retrieval and verification workflows.",
+      ja: "AI処理の最適化と、検索・検証ワークフローの改善。",
     },
     chapters: [
       {
@@ -38,7 +38,7 @@ export const caseStudies: Record<string, CaseStudyContent> = {
         paragraphs: [
           {
             en: "The first version sent a requirement and all of its drawing artifacts into a single model call. It held up on small examples and degraded as the document set grew.",
-            ja: "初期バージョンは、1つの要件とその図面一式を1回のモデル呼び出しにまとめて渡していた。小規模な例では機能したが、文書量が増えるにつれて精度が落ちていった。",
+            ja: "初期バージョンは、1つの要件とその図面一式を1回のモデル呼び出しにまとめて渡していた。小規模な例では機能したが、文書量が増えるにつれて精度が落ちてい行った。",
           },
           {
             en: "Answers grew verbose and hard to audit. Cost and latency varied from run to run, and the same requirement could be judged differently on two consecutive evaluations. Retrieval and reasoning happened in one step, so every requirement re-read the whole context.",
@@ -70,20 +70,6 @@ export const caseStudies: Record<string, CaseStudyContent> = {
               ja: "検索によって要件に関係する箇所まで文書を絞り込み、検証ステップがその箇所で要件を支えられるかを判定する。出力は物語ではなく、根拠が添えられた判定になる。",
             },
           },
-          {
-            title: { en: "Cut the work per run", ja: "1回あたりの処理を削る" },
-            body: {
-              en: "Reusing extracted evidence across requirements removed repeated calls, taking a full evaluation from 420 model calls to 106 and the cost per run from $22.96 to $10.83.",
-              ja: "抽出済みの根拠を要件間で再利用することで重複呼び出しを排除。評価1回あたりのモデル呼び出しは420回から106回、実行コストは$22.96から$10.83になった。",
-            },
-          },
-          {
-            title: { en: "Measure every change", ja: "変更を必ず計測する" },
-            body: {
-              en: "Evaluation design and failure investigation ran alongside the pipeline work: a change stayed only if it held up against the same requirement set.",
-              ja: "パイプラインの改修と並行して評価設計と不備調査を実施し、同じ要件セットで耐えられる変更だけを残した。",
-            },
-          },
         ],
       },
       roleChapter("blueprint-analysis", {
@@ -96,8 +82,8 @@ export const caseStudies: Record<string, CaseStudyContent> = {
   "chakra-reader": {
     slug: "chakra-reader",
     outcome: {
-      en: "A reading assistant that answers by voice and by text while the reader stays in the page, with first responses in about 800ms.",
-      ja: "読み手がページから離れずに、音声とテキストの両方で応答する読書アシスタント。最初の応答は約800ms。",
+      en: "A reading assistant with AI-powered reading interaction, real-time voice and text responses, and speech recognition.",
+      ja: "AIによる読み上げ対話、リアルタイムの音声・テキスト応答、音声認識を備えた読み上げアシスタント。",
     },
     chapters: [
       {
@@ -171,8 +157,8 @@ export const caseStudies: Record<string, CaseStudyContent> = {
   "sake-world": {
     slug: "sake-world",
     outcome: {
-      en: "A storefront and a Web3 layer on one codebase, so checkout and wallet actions finish in the same session.",
-      ja: "ストアフロントとWeb3レイヤーを1つのコードベースに統合。購入とウォレット操作が同じセッション内で完結する。",
+      en: "A full-stack e-commerce and Web3 platform combining frontend, backend, database, and Web3 integration.",
+      ja: "フロントエンド、バックエンド、データベース、Web3連携を組み合わせたフルスタックEC/Web3プラットフォーム。",
     },
     chapters: [
       {

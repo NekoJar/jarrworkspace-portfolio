@@ -41,8 +41,6 @@ export function CaseStudy({ slug }: { slug: string }) {
   const index = projects.findIndex((item) => item.slug === slug);
   const previous = projects[(index - 1 + projects.length) % projects.length];
   const next = projects[(index + 1) % projects.length];
-  const headline = project.results?.[0];
-
   const pager = [
     { label: t("caseStudy.previous"), project: previous },
     { label: t("caseStudy.next"), project: next },
@@ -79,15 +77,6 @@ export function CaseStudy({ slug }: { slug: string }) {
             <p className="eyebrow">{t("caseStudy.type")}</p>
             <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300">{project.type[locale]}</p>
           </div>
-          {headline && (
-            <div>
-              <p className="eyebrow">{t("caseStudy.result")}</p>
-              <p className="mt-2 font-mono text-sm text-neutral-900 dark:text-neutral-100">{headline.metric}</p>
-              <p className="mt-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-                {headline.description[locale]}
-              </p>
-            </div>
-          )}
         </div>
 
         {project.screenshot && (
@@ -233,13 +222,11 @@ export function CaseStudy({ slug }: { slug: string }) {
             <h2 className="eyebrow">{t("caseStudy.results")}</h2>
             <div className="mt-8 grid gap-8 sm:grid-cols-3">
               {project.results.map((result) => (
-                <div key={result.metric}>
+                <div key={result.en}>
                   <p className="font-mono text-2xl tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl">
-                    {result.metric}
+                    {result[locale]}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-                    {result.description[locale]}
-                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400"></p>
                 </div>
               ))}
             </div>
