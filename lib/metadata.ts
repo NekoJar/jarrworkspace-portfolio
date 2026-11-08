@@ -24,24 +24,27 @@ export function socialImageUrl({ label, title, subtitle, tags, meta }: SocialIma
   return `${SITE_URL}/og?${params.toString()}`;
 }
 
-export const homeSocialImage = socialImageUrl({
-  label: "Full-stack engineer",
-  title: "Zharfan Hakim",
-  subtitle:
-    "Production web applications and AI-powered products, built end to end.",
-  tags: "Next.js · TypeScript · AI",
-  meta: "Japan",
-});
+export function getHomeSocialImage(locale: Locale) {
+  return socialImageUrl({
+    label: locale === "ja" ? "フルスタックエンジニア" : "Full-stack engineer",
+    title: "Zharfan Hakim",
+    subtitle:
+      locale === "ja"
+        ? "プロダクション向けWebアプリケーションとAIプロダクトを、企画から実装まで。"
+        : "Production web applications and AI-powered products, built end to end.",
+    tags: "Next.js · TypeScript · AI",
+    meta: locale === "ja" ? "日本" : "Japan",
+  });
+}
 
 export function getProjectMetadata(project: Project, locale: Locale): Metadata {
   const title = project.title[locale];
   const description = project.description[locale];
   const url = `${SITE_URL}/work/${project.slug}`;
-  // The image route only ships a Latin font, so it always uses the English copy.
   const image = socialImageUrl({
-    label: "Case study",
-    title: project.title.en,
-    subtitle: project.summary.en,
+    label: locale === "ja" ? "ケーススタディ" : "Case study",
+    title: project.title[locale],
+    subtitle: project.summary[locale],
     tags: project.technologies.slice(0, 3).join(" · "),
   });
 
@@ -62,7 +65,7 @@ export function getProjectMetadata(project: Project, locale: Locale): Metadata {
           url: image,
           width: 1200,
           height: 630,
-          alt: `${project.title.en} case study by Zharfan Hakim`,
+          alt: `${project.title[locale]} case study by Zharfan Hakim`,
         },
       ],
     },

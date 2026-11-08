@@ -19,7 +19,6 @@ export const siteCopy = {
     cta: { en: "View Work", ja: "作品を見る" },
     ctaAlt: { en: "Download Resume", ja: "履歴書をダウンロード" },
     featured: { en: "Featured work", ja: "注目の作品" },
-    social: { en: "GitHub · LinkedIn", ja: "GitHub · LinkedIn" },
   },
   workSection: {
     intro: { en: "Selected Work", ja: "主な作品" },
@@ -75,7 +74,6 @@ export const siteCopy = {
   footer: {
     name: { en: "Zharfan Hakim", ja: "Zharfan Hakim" },
     title: { en: "Full-Stack Engineer", ja: "フルスタックエンジニア" },
-    links: { en: "GitHub · LinkedIn · Email", ja: "GitHub · LinkedIn · Email" },
     copyright: { en: "© 2026 Zharfan Hakim", ja: "© 2026 Zharfan Hakim" },
   },
   caseStudy: {

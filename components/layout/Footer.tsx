@@ -14,7 +14,6 @@ export function Footer() {
             <p className="font-semibold text-lg">{t("footer.name")}</p>
             <p className="text-sm text-neutral-600 dark:text-neutral-400">{t("footer.title")}</p>
           </div>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">{t("footer.links")}</p>
           <p className="text-sm text-neutral-500 dark:text-neutral-400">{t("footer.copyright")}</p>
         </div>
       </div>

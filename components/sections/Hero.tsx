@@ -49,7 +49,25 @@ export function Hero() {
               {t("hero.ctaAlt")}
             </Link>
           </div>
-          <p className="mt-10 font-mono text-xs tracking-tight text-neutral-400 dark:text-neutral-500">{t("hero.social")}</p>
+          <div className="mt-10 flex items-center gap-2 font-mono text-xs tracking-tight text-neutral-400 dark:text-neutral-500">
+            <Link
+              href="https://github.com/NekoJar"
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-black dark:hover:text-white"
+            >
+              GitHub
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link
+              href="https://linkedin.com/in/mzharfanhakim"
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-black dark:hover:text-white"
+            >
+              LinkedIn
+            </Link>
+          </div>
         </div>
 
         <div className="lg:col-span-5">
