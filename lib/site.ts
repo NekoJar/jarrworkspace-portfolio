@@ -42,10 +42,9 @@ export const siteCopy = {
       en: "Building production web applications and AI-powered systems for Japanese clients and internal products.",
       ja: "日本拠点のクライアントと社内プロダクト向けに、プロダクション向けWebアプリケーションとAIシステムを構築。",
     },
-  },
-  stackSection: {
+  },    stackSection: {
     title: { en: "Technical Stack", ja: "技術スタック" },
-    frontend: { en: "Frontend", ja: "フロントエンド" },
+    frontend: { en: "Frontend Developer", ja: "フロントエンド開発者" },
     backend: { en: "Backend", ja: "バックエンド" },
     data: { en: "Data", ja: "データ" },
     ai: { en: "AI", ja: "AI" },

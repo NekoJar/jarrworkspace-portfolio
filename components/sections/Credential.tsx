@@ -8,7 +8,7 @@ const entries = [
     en: [
       "HackerRank",
       "Frontend Developer",
-      "Frontend, Node.js, React, JavaScript, REST API",
+      "Frontend Developer, Node.js, React, JavaScript, REST API",
     ],
     ja: [
       "HackerRank",
@@ -18,7 +18,7 @@ const entries = [
   },
   {
     year: "2024 年 6 月",
-    en: ["a"Red Hat System Administration II (RH134)"],
+    en: ["Red Hat System Administration II (RH134)"],
     ja: ["Red Hat System Administration II (RH134)"],
   },
   {
@@ -64,13 +64,21 @@ export function Credential() {
               </p>
               <ul className="mt-3 space-y-1.5">
                 {entry[locale].map((line, i) => (
-                  <li
-                    key={i}
-                    className={i === 1 ? "text-base font-semibold text-neutral-900 dark:text-neutral-100" : "text-sm leading-relaxed text-neutral-600 dark:text-neutral-400"}
-                  >
+                  <li key={i} className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
                     {line}
                   </li>
                 ))}
+                <li className="mt-3 flex gap-2">
+                  <a
+                    href={`/resume/Zharfan_Hakim_履歴書.zip`}
+                    className="inline-flex items-center gap-1 text-xs font-medium text-neutral-500 transition hover:text-black dark:hover:text-white"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Download resume package
+                    <span aria-hidden="true" className="inline-block h-3 w-3">↓</span>
+                  </a>
+                </li>
               </ul>
             </li>
           ))}
