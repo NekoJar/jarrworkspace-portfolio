@@ -7,13 +7,11 @@ const entries = [
     year: "2024 年 3 月",
     en: [
       "HackerRank",
-      "Frontend Developer",
       "Frontend Developer, Node.js, React, JavaScript, REST API",
     ],
     ja: [
       "HackerRank",
-      "フロントエンド開発者",
-      "フロントエンド, Node.js, React, JavaScript, REST API",
+      "フロントエンド開発者, Node.js, React, JavaScript, REST API",
     ],
   },
   {
@@ -50,7 +48,9 @@ export function Credential() {
       <div className="mx-auto max-w-3xl">
         <div className="flex items-baseline justify-between gap-4">
           <p className="eyebrow">{t("credentialSection.title")}</p>
-          <span className="font-mono text-[11px] text-neutral-300 dark:text-neutral-600">04</span>
+          <span className="font-mono text-[11px] text-neutral-300 dark:text-neutral-600">
+            04
+          </span>
         </div>
 
         <ul className="mt-8 space-y-6">
@@ -61,24 +61,16 @@ export function Credential() {
             >
               <p className="font-mono text-[11px] text-neutral-300 dark:text-neutral-600">
                 {entry.year}
-              </p>
+              </p>{" "}
               <ul className="mt-3 space-y-1.5">
                 {entry[locale].map((line, i) => (
-                  <li key={i} className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                  <li
+                    key={i}
+                    className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400"
+                  >
                     {line}
                   </li>
                 ))}
-                <li className="mt-3 flex gap-2">
-                  <a
-                    href={`/resume/Zharfan_Hakim_履歴書.zip`}
-                    className="inline-flex items-center gap-1 text-xs font-medium text-neutral-500 transition hover:text-black dark:hover:text-white"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Download resume package
-                    <span aria-hidden="true" className="inline-block h-3 w-3">↓</span>
-                  </a>
-                </li>
               </ul>
             </li>
           ))}

@@ -34,7 +34,9 @@ export function Hero() {
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-xl">
             {t("hero.summary")}
           </p>
-          <p className="mt-6 font-mono text-xs text-neutral-500 dark:text-neutral-400">{t("hero.based")}</p>
+          <p className="mt-6 font-mono text-xs text-neutral-500 dark:text-neutral-400">
+            {t("hero.based")}
+          </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="#work"
@@ -72,17 +74,25 @@ export function Hero() {
           >
             <div className="flex items-baseline justify-between gap-3">
               <p className="eyebrow">{t("hero.featured")}</p>
-              <span className="font-mono text-[11px] text-neutral-300 dark:text-neutral-600">01</span>
+              <span className="font-mono text-[11px] text-neutral-300 dark:text-neutral-600">
+                01
+              </span>
             </div>
             <h2 className="mt-4 text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
               {featured.title[locale]}
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{featured.summary[locale]}</p>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+              {featured.summary[locale]}
+            </p>
 
             {result && (
               <div className="mt-6 border-t border-black/5 dark:border-white/10 pt-4">
-                <p className="font-mono text-2xl tracking-tight text-neutral-900 dark:text-neutral-100">{result.metric}</p>
-                <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">{result.description[locale]}</p>
+                <p className="font-mono text-2xl tracking-tight text-neutral-900 dark:text-neutral-100">
+                  {result.metric}
+                </p>
+                <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                  {result.description[locale]}
+                </p>
               </div>
             )}
 
@@ -96,7 +106,10 @@ export function Hero() {
 
             <span className="mt-6 flex items-center justify-between text-sm font-medium text-neutral-500 dark:text-neutral-400 transition group-hover:text-black dark:group-hover:text-white">
               {t("workSection.viewCaseStudy")}
-              <span aria-hidden="true" className="text-neutral-300 dark:text-neutral-600 transition group-hover:text-black dark:group-hover:text-white">
+              <span
+                aria-hidden="true"
+                className="text-neutral-300 dark:text-neutral-600 transition group-hover:text-black dark:group-hover:text-white"
+              >
                 &rarr;
               </span>
             </span>

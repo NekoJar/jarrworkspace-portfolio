@@ -67,7 +67,14 @@ const stacks = [
   },
   {
     label: "ai",
-    items: ["OpenAI", "Gemini", "Vercel AI SDK", "Amazon Transcribe", "OCR", "AI Agents", "Retrieval"],
+    items: [
+      "OpenAI",
+      "Gemini",
+      "Vercel AI SDK",
+      "Amazon Transcribe",
+      "OCR",
+      "AI Agents",
+    ],
   },
   {
     label: "cloud",
@@ -79,22 +86,31 @@ export function ExperienceStack() {
   const { t, locale } = useLocale();
 
   return (
-    <section id="experience" className="scroll-mt-24 bg-[#f5f5f5] dark:bg-neutral-950 px-5 py-20 sm:px-8 sm:py-28">
+    <section
+      id="experience"
+      className="scroll-mt-24 bg-[#f5f5f5] dark:bg-neutral-950 px-5 py-20 sm:px-8 sm:py-28"
+    >
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
           <article className="rounded-2xl bg-white dark:bg-neutral-900 p-6 ring-1 ring-black/5 dark:ring-white/10 sm:col-span-2 sm:p-8 lg:col-span-4">
             <div className="flex items-baseline justify-between gap-4">
               <p className="eyebrow">{t("experienceSection.intro")}</p>
-              <span className="font-mono text-[11px] text-neutral-300 dark:text-neutral-600">01</span>
+              <span className="font-mono text-[11px] text-neutral-300 dark:text-neutral-600">
+                01
+              </span>
             </div>
 
             <h2 className="mt-6 text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl">
               {t("experienceSection.role")}
             </h2>
             <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-              <span className="font-medium text-neutral-700 dark:text-neutral-300">{t("experienceSection.company")}</span>
+              <span className="font-medium text-neutral-700 dark:text-neutral-300">
+                {t("experienceSection.company")}
+              </span>
               <span className="mx-2">·</span>
-              <time className="font-mono text-xs">{t("experienceSection.period")}</time>
+              <time className="font-mono text-xs">
+                {t("experienceSection.period")}
+              </time>
             </p>
             <p className="mt-4 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
               {t("experienceSection.summary")}
@@ -106,7 +122,10 @@ export function ExperienceStack() {
                   key={bullet.en}
                   className="flex gap-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400"
                 >
-                  <span aria-hidden="true" className="font-mono text-xs text-neutral-300 dark:text-neutral-600">
+                  <span
+                    aria-hidden="true"
+                    className="font-mono text-xs text-neutral-300 dark:text-neutral-600"
+                  >
                     —
                   </span>
                   <span>{bullet[locale]}</span>
@@ -118,7 +137,9 @@ export function ExperienceStack() {
           <article className="rounded-2xl bg-white dark:bg-neutral-900 p-6 ring-1 ring-black/5 dark:ring-white/10 sm:col-span-2 sm:p-8 lg:col-span-2">
             <div className="flex items-baseline justify-between gap-4">
               <p className="eyebrow">{t("approachSection.intro")}</p>
-              <span className="font-mono text-[11px] text-neutral-300 dark:text-neutral-600">02</span>
+              <span className="font-mono text-[11px] text-neutral-300 dark:text-neutral-600">
+                02
+              </span>
             </div>
 
             <ol className="mt-6 space-y-5">
@@ -141,16 +162,23 @@ export function ExperienceStack() {
           <article className="rounded-2xl bg-white dark:bg-neutral-900 p-6 ring-1 ring-black/5 dark:ring-white/10 sm:col-span-2 sm:p-8 lg:col-span-6">
             <div className="flex items-baseline justify-between gap-4">
               <p className="eyebrow">{t("stackSection.title")}</p>
-              <span className="font-mono text-[11px] text-neutral-300 dark:text-neutral-600">03</span>
+              <span className="font-mono text-[11px] text-neutral-300 dark:text-neutral-600">
+                03
+              </span>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-5">
               {stacks.map((group) => (
                 <div key={group.label}>
-                  <h3 className="eyebrow">{t(`stackSection.${group.label}`)}</h3>
+                  <h3 className="eyebrow">
+                    {t(`stackSection.${group.label}`)}
+                  </h3>
                   <ul className="mt-3 space-y-1.5">
                     {group.items.map((item) => (
-                      <li key={item} className="font-mono text-xs text-neutral-600 dark:text-neutral-400">
+                      <li
+                        key={item}
+                        className="font-mono text-xs text-neutral-600 dark:text-neutral-400"
+                      >
                         {item}
                       </li>
                     ))}

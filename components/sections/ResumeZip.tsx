@@ -16,6 +16,9 @@ export function ResumeZip({ native_btn = false }: { native_btn?: boolean }) {
         className="rounded-md border border-black/10 dark:border-white/10 px-6 py-3 text-sm font-medium text-neutral-700 dark:text-neutral-300 transition hover:bg-black/5 dark:hover:bg-white/5"
       >
         {t("hero.ctaAlt")}
+        <span aria-hidden="true" className="ml-1">
+          ↓
+        </span>
       </Link>
     );
   }
@@ -23,7 +26,7 @@ export function ResumeZip({ native_btn = false }: { native_btn?: boolean }) {
   return (
     <Link
       href={href}
-      className="text-sm font-medium text-neutral-600 dark:text-neutral-400 transition hover:text-black dark:hover:text-white"
+      className="text-xs font-medium text-neutral-600 dark:text-neutral-400 transition hover:text-black dark:hover:text-white"
     >
       {t("nav.resume")}
     </Link>
