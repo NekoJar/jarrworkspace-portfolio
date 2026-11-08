@@ -1,36 +1,30 @@
 "use client";
 
 
-import { siteCopy } from "@/lib/site";
 import { useLocale } from "@/components/layout/LocaleProvider";
 
 const stacks = [
   {
     label: "frontend",
-    title: "Frontend",
     items: ["TypeScript", "React", "Next.js", "Tailwind CSS", "TanStack Query"],
   },
   {
     label: "backend",
-    title: "Backend",
     items: ["Node.js", "NestJS", "REST APIs", "Webhooks"],
   },
   {
     label: "data",
-    title: "Data",
     items: ["PostgreSQL", "MySQL", "Prisma"],
   },
   {
     label: "ai",
-    title: "AI",
     items: ["OpenAI", "Gemini", "Vercel AI SDK", "Amazon Transcribe", "OCR", "AI Agents", "Retrieval"],
   },
   {
     label: "cloud",
-    title: "Cloud",
     items: ["AWS", "Vercel"],
   },
-];
+] as const;
 
 export function Stack() {
   const { t } = useLocale();
@@ -43,7 +37,7 @@ export function Stack() {
             {t("stackSection.title")}
           </p>
           <h2 className="mt-2 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
-            Technical Stack
+            {t("stackSection.title")}
           </h2>
         </header>
 
@@ -51,7 +45,7 @@ export function Stack() {
           {stacks.map((group) => (
             <div key={group.label} className="pb-6 sm:pb-0">
               <p className="text-xs font-medium uppercase tracking-widest text-neutral-400">
-                {group.title}
+                {t(`stackSection.${group.label}`)}
               </p>
               <ul className="mt-3 space-y-2">
                 {group.items.map((item) => (

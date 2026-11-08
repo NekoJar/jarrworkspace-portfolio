@@ -2,12 +2,12 @@
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { type Locale } from "../../lib/i18n";
-import { siteCopy } from "../../lib/site";
+import { siteCopy, type SiteCopyKey } from "../../lib/site";
 
 interface LocaleContextValue {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  t: (key: string) => string;
+  t: (key: SiteCopyKey) => string;
 }
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
@@ -27,7 +27,7 @@ export function LocaleProvider({
   }, []);
 
   const t = useCallback(
-    (key: string): string => {
+    (key: SiteCopyKey): string => {
       const keys = key.split(".");
       let value: unknown = siteCopy;
       for (const k of keys) {

@@ -1,15 +1,14 @@
 "use client";
 
 
-import { siteCopy } from "@/lib/site";
 import { useLocale } from "@/components/layout/LocaleProvider";
 
 const steps = [
-  { key: "understand", title: "Understand", description: "Clarify requirements and constraints before choosing an implementation." },
-  { key: "build", title: "Build", description: "Work across frontend, backend, data, AI, and infrastructure." },
-  { key: "measure", title: "Measure", description: "Use evaluation, performance, cost, and reliability as feedback." },
-  { key: "iterate", title: "Iterate", description: "Improve systems using real results and stakeholder feedback." },
-];
+  { key: "understand", description: "Clarify requirements and constraints before choosing an implementation." },
+  { key: "build", description: "Work across frontend, backend, data, AI, and infrastructure." },
+  { key: "measure", description: "Use evaluation, performance, cost, and reliability as feedback." },
+  { key: "iterate", description: "Improve systems using real results and stakeholder feedback." },
+] as const;
 
 export function Approach() {
   const { t } = useLocale();
@@ -22,7 +21,7 @@ export function Approach() {
             {t("approachSection.intro")}
           </p>
           <h2 className="mt-2 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
-            Engineering Approach
+            {t("approachSection.intro")}
           </h2>
         </header>
 
@@ -35,7 +34,9 @@ export function Approach() {
               <span className="text-xs font-medium uppercase tracking-widest text-neutral-400">
                 {t(`approachSection.${step.key}`)}
               </span>
-              <h3 className="mt-2 text-xl font-semibold text-neutral-900">{step.title}</h3>
+              <h3 className="mt-2 text-xl font-semibold text-neutral-900">
+                {t(`approachSection.${step.key}`)}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-neutral-600">{step.description}</p>
             </div>
           ))}

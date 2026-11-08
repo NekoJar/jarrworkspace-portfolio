@@ -34,6 +34,7 @@ export const siteCopy = {
     },
   },
   stackSection: {
+    title: { en: "Technical Stack", ja: "技術スタック" },
     frontend: { en: "Frontend", ja: "フロントエンド" },
     backend: { en: "Backend", ja: "バックエンド" },
     data: { en: "Data", ja: "データ" },
@@ -41,6 +42,7 @@ export const siteCopy = {
     cloud: { en: "Cloud", ja: "クラウド" },
   },
   approachSection: {
+    intro: { en: "Engineering Approach", ja: "エンジニアリングへのアプローチ" },
     understand: { en: "Understand", ja: "理解する" },
     build: { en: "Build", ja: "構築する" },
     measure: { en: "Measure", ja: "計測する" },
@@ -78,3 +80,9 @@ export const siteCopy = {
     menu: { en: "Menu", ja: "メニュー" },
   },
 } as const;
+
+type CopyPath<T> = {
+  [K in keyof T & string]: T[K] extends LocalizedText ? K : `${K}.${CopyPath<T[K]>}`;
+}[keyof T & string];
+
+export type SiteCopyKey = CopyPath<typeof siteCopy>;

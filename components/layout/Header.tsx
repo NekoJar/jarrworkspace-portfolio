@@ -8,7 +8,7 @@ const navItems = [
   { key: "experience", label: "Experience", href: "#experience" },
   { key: "about", label: "About", href: "#about" },
   { key: "contact", label: "Contact", href: "#contact" },
-];
+] as const;
 
 export function Header() {
   const { locale, setLocale, t } = useLocale();
