@@ -40,10 +40,7 @@ export const metadata: Metadata = {
       "Portfolio of Zharfan Hakim, a Full-Stack Engineer building production web applications and AI-powered products.",
   },
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", type: "image/x-icon" },
-    ],
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
 };
 
@@ -52,9 +49,16 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
-  const localeCookie = cookieStore.get("locale");
-  const locale: "en" | "ja" = localeCookie?.value === "ja" ? "ja" : "en";
+  let locale: "en" | "ja" = "en";
+  try {
+    const cookieStore = await cookies();
+    const localeCookie = cookieStore.get("locale");
+    if (localeCookie?.value === "ja") {
+      locale = "ja";
+    }
+  } catch {
+    locale = "en";
+  }
 
   return (
     <html lang={locale}>

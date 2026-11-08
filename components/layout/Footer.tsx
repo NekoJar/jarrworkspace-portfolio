@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { siteCopy } from "../../lib/site";
 import { useLocale } from "./LocaleProvider";
