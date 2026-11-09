@@ -1,12 +1,11 @@
-import { projects } from "./projects";
 import type { CaseStudyChapter, CaseStudyContent, LocalizedText } from "./types";
 
-function roleChapter(slug: string, intro: LocalizedText): CaseStudyChapter {
+function contributionChapter(intro: LocalizedText, bullets: LocalizedText[]): CaseStudyChapter {
   return {
-    id: "role",
-    title: { en: "Role and scope", ja: "役割と担当範囲" },
+    id: "contribution",
+    title: { en: "My Contribution", ja: "担当業務" },
     paragraphs: [intro],
-    bullets: projects.find((project) => project.slug === slug)!.contribution,
+    bullets,
   };
 }
 
@@ -72,10 +71,30 @@ export const caseStudies: Record<string, CaseStudyContent> = {
           },
         ],
       },
-      roleChapter("blueprint-analysis", {
-        en: "I worked as the full-stack engineer on the project, from the evaluation dashboard to the AI pipeline and the failure analysis behind it.",
-        ja: "評価ダッシュボードからAIパイプライン、その背後の不備調査まで、フルスタックエンジニアとして担当した。",
-      }),
+      contributionChapter(
+        {
+          en: "I worked as the full-stack engineer on the project, from the evaluation dashboard to the AI pipeline and the failure analysis behind it.",
+          ja: "評価ダッシュボードからAIパイプライン、その背後の不備調査まで、フルスタックエンジニアとして担当した。",
+        },
+        [
+          {
+            en: "Implemented application workflows using Next.js and TypeScript to support engineering drawing analysis and requirement verification.",
+            ja: "Next.jsとTypeScriptを用いて、技術図面の解析および要求事項の検証を支援するアプリケーションワークフローを実装。",
+          },
+          {
+            en: "Integrated and refined AI-powered processing workflows using OpenAI and Gemini for drawing analysis, requirement extraction, and evaluation.",
+            ja: "OpenAIとGeminiを活用した図面解析、要求事項の抽出、評価処理のAIワークフローを統合・改善。",
+          },
+          {
+            en: "Investigated retrieval failures and evaluation mismatches, then refined evidence matching and verification logic through iterative testing.",
+            ja: "検索漏れや評価結果の不一致を調査し、反復的なテストを通じて根拠の照合および検証ロジックを改善。",
+          },
+          {
+            en: "Optimized AI processing workflows by reducing redundant model calls and improving coordination between processing stages.",
+            ja: "重複したAIモデル呼び出しを削減し、処理工程間の連携を改善することで、AI処理ワークフローを最適化。",
+          },
+        ]
+      ),
     ],
   },
 
@@ -147,10 +166,30 @@ export const caseStudies: Record<string, CaseStudyContent> = {
           },
         ],
       },
-      roleChapter("chakra-reader", {
-        en: "I built the assistant's interface and the path between it and the model: interaction design, real-time transport, speech recognition, and API integration.",
-        ja: "アシスタントのインターフェースと、そこからモデルまでの経路を担当。インタラクション設計、リアルタイム通信、音声認識、API統合。",
-      }),
+      contributionChapter(
+        {
+          en: "I built the assistant's interface and the path between it and the model: interaction design, real-time transport, speech recognition, and API integration.",
+          ja: "アシスタントのインターフェースと、そこからモデルまでの経路を担当。インタラクション設計、リアルタイム通信、音声認識、API統合。",
+        },
+        [
+          {
+            en: "Developed the Next.js application and its interaction workflows for an AI-powered reading assistant.",
+            ja: "AI読書アシスタントのNext.jsアプリケーションおよびユーザーインタラクションのワークフローを開発。",
+          },
+          {
+            en: "Integrated OpenAI generative and real-time AI capabilities using the Vercel AI SDK.",
+            ja: "Vercel AI SDKを使用し、OpenAIの生成AIおよびリアルタイムAI機能を統合。",
+          },
+          {
+            en: "Integrated Amazon Transcribe to support speech recognition and voice-based user input.",
+            ja: "Amazon Transcribeを統合し、音声認識と音声によるユーザー入力に対応。",
+          },
+          {
+            en: "Implemented streaming conversation interactions and coordinated voice and text input within a shared conversation workflow.",
+            ja: "ストリーミング形式の会話処理を実装し、音声入力とテキスト入力を共通の会話ワークフローで処理できるようにした。",
+          },
+        ]
+      ),
     ],
   },
 
@@ -222,10 +261,30 @@ export const caseStudies: Record<string, CaseStudyContent> = {
           },
         ],
       },
-      roleChapter("sake-world", {
-        en: "I worked across the storefront, the API, and the database, and connected the Web3 pieces to the same order and user records.",
-        ja: "ストアフロント、API、データベースを横断して担当し、Web3の要素を同じ注文・ユーザーレコードにつないだ。",
-      }),
+      contributionChapter(
+        {
+          en: "I worked across the storefront, the API, and the database, and connected the Web3 pieces to the same order and user records.",
+          ja: "ストアフロント、API、データベースを横断して担当し、Web3の要素を同じ注文・ユーザーレコードにつないだ。",
+        },
+        [
+          {
+            en: "Contributed to full-stack application development across frontend interfaces and backend services.",
+            ja: "フロントエンドのUIからバックエンドサービスまで、アプリケーションのフルスタック開発に従事。",
+          },
+          {
+            en: "Developed backend functionality and API integrations supporting e-commerce and Web3-related application workflows.",
+            ja: "ECおよびWeb3関連のアプリケーションワークフローを支えるバックエンド機能とAPI連携を開発。",
+          },
+          {
+            en: "Worked with PostgreSQL-backed data management to support application functionality.",
+            ja: "PostgreSQLを用いたデータ管理に関連するアプリケーション機能を実装。",
+          },
+          {
+            en: "Connected user-facing application features with backend services to support the overall product experience.",
+            ja: "ユーザー向け機能とバックエンドサービスを連携させ、アプリケーション全体の機能を開発。",
+          },
+        ]
+      ),
     ],
   },
 };
