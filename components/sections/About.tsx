@@ -1,33 +1,27 @@
-import Image from "next/image";
-import React from "react";
+"use client";
 
-const About = () => {
+
+import { useLocale } from "@/components/layout/LocaleProvider";
+
+export function About() {
+  const { t } = useLocale();
+
   return (
-    <div className="h-[100vh] sm:h-[200vh] py-[20vh] px-[5vw] flex flex-col items-center justify-center">
-      <p className="text-2xl sm:text-5xl font-inter uppercase text-left font-medium text-neutral-500 pb-20 sm:pb-40">
-        <span className="flex">
-          <video src="/eye.mp4" height={10} width={90} autoPlay loop muted />
-          Hi I&apos;m{" "}
-        </span>
-        <span className="font-pixel text-neutral-800 text-3xl sm:text-6xl">
-          <span className="italic">Z</span>harfan Hakim
-        </span>
-        , I study as a{" "}
-        <span className="underline font-semibold text-neutral-500">
-          computer science
-        </span>{" "}
-        student at <span className="italic">Telkom University</span> specialized
-        on building{" "}
-        <span className="text-neutral-900 font-extrabold">
-          modern, user-friendly web app.{" "}
-        </span>
-      </p>
-      <p className="text-2xl font-roboto text-left uppercase text-neutral-900 pl-0 sm:pl-[50vw]">
-        I Love to work in TypeScript, Next.js, and Tailwind CSS, but I&apos;m
-        happy seeking the right tools for the job.
-      </p>
-    </div>
+    <section
+      id="about"
+      className="bg-[#f5f5f5] dark:bg-neutral-950 px-5 py-20 sm:px-8 sm:py-28"
+      style={{ scrollMarginTop: 120 }}
+    >
+      <div className="mx-auto max-w-3xl">
+        <header className="text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl">
+            {t("aboutSection.title")}
+          </h2>
+        </header>
+        <p className="mt-8 leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-lg">
+          {t("aboutSection.body")}
+        </p>
+      </div>
+    </section>
   );
-};
-
-export default About;
+}
