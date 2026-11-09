@@ -22,6 +22,12 @@ export const siteCopy = {
   },
   credentialSection: {
     title: { en: "Credentials", ja: "資格・認定" },
+    groups: {
+      linux: { en: "Linux / Red Hat", ja: "Linux・Red Hat" },
+      hackerrank: { en: "HackerRank", ja: "HackerRank" },
+      language: { en: "Language", ja: "語学" },
+    },
+    verify: { en: "Verify", ja: "証明書" },
   },
   workSection: {
     intro: { en: "Selected Work", ja: "主な作品" },
