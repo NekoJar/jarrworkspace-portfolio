@@ -25,20 +25,16 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "OpenAI", "Gemini", "OCR", "AWS", "PostgreSQL"],
     results: [
       {
-        en: "Reduced redundant AI model calls through workflow optimization.",
-        ja: "ワークフローの最適化により、不要なAIモデル呼び出しを削減。",
+        en: "Streamlined the requirement evaluation workflow by reducing redundant AI model calls across processing stages.",
+        ja: "処理工程間の重複したAIモデル呼び出しを削減し、要求事項の評価ワークフローを効率化。",
       },
       {
-        en: "Improved retrieval and verification of engineering drawing requirements.",
-        ja: "図面要件の検索・検証精度を改善。",
+        en: "Improved traceability between engineering drawing evidence and requirement-level evaluation results.",
+        ja: "図面上の根拠と要求事項ごとの評価結果の追跡性を向上。",
       },
       {
-        en: "Refined evaluation logic through iterative testing and analysis.",
-        ja: "継続的なテストと分析を通じて、評価ロジックを改善。",
-      },
-      {
-        en: "Improved processing efficiency while maintaining the verification workflow.",
-        ja: "検証ワークフローを維持しながら、処理効率を改善。",
+        en: "Strengthened evaluation consistency through iterative refinement of retrieval, evidence matching, and verification logic.",
+        ja: "検索、根拠の照合、検証ロジックを継続的に改善し、評価の一貫性を強化。",
       },
     ],
     featured: true,
@@ -68,20 +64,16 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "OpenAI", "Vercel AI SDK", "Amazon Transcribe"],
     results: [
       {
-        en: "AI-powered reading interaction with voice and text responses.",
-        ja: "音声とテキストの応答によるAI読み上げ対話。",
+        en: "Enabled users to interact with the reading assistant through both voice and text while maintaining shared conversation context.",
+        ja: "音声とテキストの両方から利用でき、共通の会話コンテキストを維持できる読書アシスタントを実装。",
       },
       {
-        en: "Real-time interaction with streaming responses and interruption handling.",
-        ja: "ストリーミング応答と中断対応によるリアルタイム対話。",
+        en: "Implemented real-time voice interaction with streaming responses and interruption handling.",
+        ja: "ストリーミング応答と割り込み処理に対応したリアルタイム音声対話を実現。",
       },
       {
-        en: "Speech recognition integration for voice input.",
-        ja: "音声入力のための音声認識連携。",
-      },
-      {
-        en: "Frontend UX and backend/API integration for the assistant.",
-        ja: "アシスタントのフロントエンドUXとバックエンド/API統合。",
+        en: "Integrated speech recognition to convert spoken input into the assistant's conversation workflow.",
+        ja: "音声認識を統合し、音声入力をアシスタントの会話処理に組み込んだ。",
       },
     ],
     featured: true,
@@ -111,16 +103,16 @@ export const projects: Project[] = [
     technologies: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL"],
     results: [
       {
-        en: "Full-stack application development across frontend, backend, and database.",
-        ja: "フロントエンド、バックエンド、データベースを横断するフルスタック開発。",
+        en: "Developed backend functionality supporting the application's e-commerce and Web3-related workflows.",
+        ja: "ECおよびWeb3関連のワークフローを支えるバックエンド機能を開発。",
       },
       {
-        en: "E-commerce functionality integrated with Web3 workflows.",
-        ja: "Web3ワークフローと統合されたEC機能。",
+        en: "Integrated application APIs with PostgreSQL-backed data management.",
+        ja: "アプリケーションAPIとPostgreSQLを用いたデータ管理を統合。",
       },
       {
-        en: "Single codebase for web and Web3 surfaces.",
-        ja: "WebとWeb3の画面を単一のコードベースで提供。",
+        en: "Contributed to full-stack development across the application's user-facing and backend components.",
+        ja: "ユーザー向け機能からバックエンドまで、アプリケーションのフルスタック開発を担当。",
       },
     ],
     featured: true,

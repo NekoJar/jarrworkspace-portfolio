@@ -14,8 +14,8 @@ export const caseStudies: Record<string, CaseStudyContent> = {
   "blueprint-analysis": {
     slug: "blueprint-analysis",
     outcome: {
-      en: "Streamlined the requirement evaluation workflow by reducing redundant AI model calls across processing stages.",
-      ja: "処理工程間の重複したAIモデル呼び出しを削減し、要求事項の評価ワークフローを効率化。",
+      en: "Optimized AI processing and improved retrieval and verification workflows.",
+      ja: "AI処理の最適化と、検索・検証ワークフローの改善。",
     },
     chapters: [
       {
@@ -82,8 +82,8 @@ export const caseStudies: Record<string, CaseStudyContent> = {
   "chakra-reader": {
     slug: "chakra-reader",
     outcome: {
-      en: "Enabled users to interact with the reading assistant through both voice and text while maintaining shared conversation context.",
-      ja: "音声とテキストの両方から利用でき、共通の会話コンテキストを維持できる読書アシスタントを実装。",
+      en: "A reading assistant with AI-powered reading interaction, real-time voice and text responses, and speech recognition.",
+      ja: "AIによる読み上げ対話、リアルタイムの音声・テキスト応答、音声認識を備えた読み上げアシスタント。",
     },
     chapters: [
       {
@@ -157,8 +157,8 @@ export const caseStudies: Record<string, CaseStudyContent> = {
   "sake-world": {
     slug: "sake-world",
     outcome: {
-      en: "Developed backend functionality supporting the application's e-commerce and Web3-related workflows.",
-      ja: "ECおよびWeb3関連のワークフローを支えるバックエンド機能を開発。",
+      en: "A full-stack e-commerce and Web3 platform combining frontend, backend, database, and Web3 integration.",
+      ja: "フロントエンド、バックエンド、データベース、Web3連携を組み合わせたフルスタックEC/Web3プラットフォーム。",
     },
     chapters: [
       {
