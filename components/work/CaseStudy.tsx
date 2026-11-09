@@ -220,16 +220,19 @@ export function CaseStudy({ slug }: { slug: string }) {
         {project.results && project.results.length > 0 && (
           <section className="border-t border-black/10 dark:border-white/10 py-14 sm:py-16">
             <h2 className="eyebrow">{t("caseStudy.results")}</h2>
-            <div className="mt-8 grid gap-8 sm:grid-cols-3">
+            <ul className="mt-8 max-w-[65ch] space-y-3">
               {project.results.map((result) => (
-                <div key={result.en}>
-                  <p className="font-mono text-2xl tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl">
-                    {result[locale]}
-                  </p>
-                  <p className="mt-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400"></p>
-                </div>
+                <li
+                  key={result.en}
+                  className="flex gap-3 leading-relaxed text-neutral-600 dark:text-neutral-400"
+                >
+                  <span aria-hidden="true" className="font-mono text-xs text-neutral-300 dark:text-neutral-600">
+                    —
+                  </span>
+                  <span>{result[locale]}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
         )}
 
